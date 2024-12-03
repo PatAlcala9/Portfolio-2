@@ -1,16 +1,36 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
 
+const name = "Patrick Alvin Alcala";
+const firstname = "Patrick";
+const secondname = "Alvin";
+const lastname = "Alcala";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Pat Alcala" pageDescription="Portfolio">
+  <div class="page">
+    <section class="title">
+      <span class="title__hello text">Hello, I'm</span>
+      <span class="title__name text">Patrick Alvin Alcala</span>
+    </section>
+  </div>
+</MainLayout>
+
+<style lang="sass">
+  .title
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    align-content: flex-start
+
+    &__hello
+      font-family: 'Geologica'
+      font-size: 1.5rem
+
+    &__name
+      font-family: 'Geologica Bold'
+      font-size: 3.5rem
+      padding: 0
+</style>
