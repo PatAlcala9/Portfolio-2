@@ -1,16 +1,56 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
-import proton from "../assets/images/proton.avif";
-import yahoo from "../assets/images/yahoo.avif";
-import gmail from "../assets/images/gmail.avif";
+import MainLayout from '../layouts/MainLayout.astro'
+import { Image } from 'astro:assets'
+import proton from '../assets/images/proton.avif'
+import yahoo from '../assets/images/yahoo.avif'
+import gmail from '../assets/images/gmail.avif'
 
-const name = "Patrick Alvin Alcala";
-const firstname = "Patrick";
-const secondname = "Alvin";
-const lastname = "Alcala";
-const email = "patrick_alv@yahoo.com";
+const name = 'Patrick Alvin Alcala'
+const firstname = 'Patrick'
+const secondname = 'Alvin'
+const lastname = 'Alcala'
+
+const yemail = 'patrick_alv@yahoo.com'
 ---
+
+<script>
+  const yemail = 'patrick_alv@yahoo.com'
+  const gemail = 'pat.alcala9@gmail.com'
+  const pemail = 'pat.alcala9@proton.me'
+
+  const emailDisplay = document.getElementById('emailDisplay')
+  const tabYmail = document.getElementById('tabYmail')
+  const tabGmail = document.getElementById('tabGmail')
+  const tabPmail = document.getElementById('tabPmail')
+
+  tabYmail.addEventListener('click', () => {
+    emailDisplay.innerText = yemail
+    tabYmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+    tabYmail.style.border = 'none'
+    tabGmail.style.backgroundColor = 'transparent'
+    tabGmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    tabPmail.style.backgroundColor = 'transparent'
+    tabPmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+  })
+  tabGmail.addEventListener('click', () => {
+    emailDisplay.innerText = gemail
+    tabYmail.style.backgroundColor = 'transparent'
+    tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    tabGmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+    tabGmail.style.border = 'none'
+    tabPmail.style.backgroundColor = 'transparent'
+    tabPmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+  })
+  tabPmail.addEventListener('click', () => {
+    emailDisplay.innerText = pemail
+    tabYmail.style.backgroundColor = 'transparent'
+    tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    tabGmail.style.backgroundColor = 'transparent'
+    tabGmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    tabPmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+    tabPmail.style.border = 'none'
+  })
+</script>
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
   <div class="page">
@@ -29,35 +69,18 @@ const email = "patrick_alv@yahoo.com";
       <span class="contacts__text">Contacts</span>
 
       <div class="contacts__email">
-        <span class="contacts__email__content">{email}</span>
+        <span class="contacts__email__content" id="emailDisplay">{yemail}</span>
       </div>
 
       <div class="contacts__tabs">
-        <div class="contacts__tab">
-          <Image
-            src={yahoo}
-            alt="Yahoo Mail"
-            quality={"mid"}
-            width={90}
-          />
+        <div class="contacts__tab__selected" id="tabYmail">
+          <Image src={yahoo} alt="Yahoo Mail" quality={'mid'} width={90} />
         </div>
-        <div class="contacts__tab">
-          <Image
-            class="picture"
-            src={gmail}
-            alt="Gooogle Mail"
-            quality={"mid"}
-            width={80}
-          />
+        <div class="contacts__tab" id="tabGmail">
+          <Image src={gmail} alt="Google Mail" quality={'mid'} width={80} />
         </div>
-        <div class="contacts__tab">
-          <Image
-            class="picture"
-            src={proton}
-            alt="Proton Mail"
-            quality={"mid"}
-            width={100}
-          />
+        <div class="contacts__tab" id="tabPmail">
+          <Image src={proton} alt="Proton Mail" quality={'mid'} width={100} />
         </div>
       </div>
     </section>
@@ -147,5 +170,16 @@ const email = "patrick_alv@yahoo.com";
       place-items: center
       width: 8.4375rem
       height: 2.125rem
-      background-color: white
+      background-color: transparent
+      border: 1px solid hsla(240, 24%, 58%, 0.8)
+      cursor: pointer
+
+      &__selected
+        display: grid
+        place-items: center
+        width: 8.4375rem
+        height: 2.125rem
+        background-color: hsla(240, 24%, 75%, 0.8)
+        border: none
+        cursor: pointer
 </style>
