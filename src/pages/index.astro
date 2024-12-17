@@ -1,23 +1,83 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import proton from "../assets/images/proton.avif";
+import yahoo from "../assets/images/yahoo.avif";
+import gmail from "../assets/images/gmail.avif";
 
 const name = "Patrick Alvin Alcala";
 const firstname = "Patrick";
 const secondname = "Alvin";
 const lastname = "Alcala";
+const email = "patrick_alv@yahoo.com";
 ---
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
   <div class="page">
-    <section class="title">
-      <span class="title__hello text">Hello, I'm</span>
-      <span class="title__name text">Patrick Alvin Alcala</span>
+    <section class="texts text">
+      <span class="texts__hello">Hello, I'm</span>
+      <span class="texts__name">Patrick Alvin Alcala</span>
+
+      <div class="positions text">
+        <span class="positions__dev">Fullstack Developer</span>
+        <span class="positions_design">Graphic Designer</span>
+        <span class="positions_write">Writer</span>
+      </div>
+    </section>
+
+    <section class="contacts text">
+      <span class="contacts__text">Contacts</span>
+
+      <div class="contacts__email">
+        <span class="contacts__email__content">{email}</span>
+      </div>
+
+      <div class="contacts__tabs">
+        <div class="contacts__tab">
+          <Image
+            src={yahoo}
+            alt="Yahoo Mail"
+            quality={"mid"}
+            width={90}
+          />
+        </div>
+        <div class="contacts__tab">
+          <Image
+            class="picture"
+            src={gmail}
+            alt="Gooogle Mail"
+            quality={"mid"}
+            width={80}
+          />
+        </div>
+        <div class="contacts__tab">
+          <Image
+            class="picture"
+            src={proton}
+            alt="Proton Mail"
+            quality={"mid"}
+            width={100}
+          />
+        </div>
+      </div>
     </section>
   </div>
 </MainLayout>
 
 <style lang="sass">
-  .title
+  .page
+    display: grid
+    grid-template-columns: 1.2fr 0.8fr
+    grid-template-rows: 1.5fr 0.5fr
+    gap: 0px 0px
+    grid-auto-flow: row
+    grid-template-areas: "texts photos" "modes contacts"
+
+  .texts
+    grid-area: texts
+    padding: 0 7.5rem
+    width: 51.5625rem
+    height: 37.5rem
     display: flex
     flex-direction: column
     flex-wrap: wrap
@@ -33,4 +93,59 @@ const lastname = "Alcala";
       font-family: 'Geologica Bold'
       font-size: 3.5rem
       padding: 0
+
+  .positions
+    margin: 3rem 0 0 0
+    font-size: 1.5rem
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    align-content: flex-start
+
+  .photos
+    grid-area: photos
+
+  .modes
+    grid-area: modes
+
+  .contacts
+    grid-area: contacts
+    font-size: 1.125rem
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    align-content: flex-start
+
+    &__email
+      display: grid
+      align-items: center
+      padding: 0 -1rem 0 1rem
+      margin: 0.5rem 0 0 0
+      width: 26.6875rem
+      height: 3.5rem
+      border: 1px solid white
+
+      &__content
+        padding: 0 0 0 1rem
+
+    &__tabs
+      display: flex
+      flex-direction: row
+      gap: 0.6875rem
+      width: 26.6875rem
+      // height: 2.125rem
+      // background-color: blue
+
+    &__tab
+      display: grid
+      place-items: center
+      width: 8.4375rem
+      height: 2.125rem
+      background-color: white
 </style>
