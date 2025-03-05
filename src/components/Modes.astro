@@ -2,10 +2,29 @@
 
 ---
 
+<script>
+  import { mode } from '../stores/mode.js'
+
+  const programmer = document.getElementById('programmer')
+  programmer.addEventListener('click', () => {
+    mode.set('programmerMode')
+  })
+
+  const designer = document.getElementById('designer')
+  designer.addEventListener('click', () => {
+    mode.set('designerMode')
+  })
+
+  const writer = document.getElementById('writer')
+  writer.addEventListener('click', () => {
+    mode.set('writerMode')
+  })
+</script>
+
 <section class="container">
-  <div class="box">Programmer Mode</div>
-  <div class="box">Designer Mode</div>
-  <div class="box">Writer Mode</div>
+  <div class="box" id="programmer">Programmer Mode</div>
+  <div class="box" id="designer">Designer Mode</div>
+  <div class="box" id="writer">Writer Mode</div>
 </section>
 
 <style lang="sass">

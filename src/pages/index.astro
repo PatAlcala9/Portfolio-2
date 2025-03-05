@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import Contact from '../components/Contact.astro'
 import Modes from '../components/Modes.astro'
+import Photos from '../components/Photos.astro'
 
 const name = 'Patrick Alvin Alcala'
 const firstname = 'Patrick'
@@ -10,6 +11,29 @@ const lastname = 'Alcala'
 
 const yemail = 'patrick_alv@yahoo.com'
 ---
+
+<!-- <script>
+  import { mode } from '../stores/mode.js'
+
+  const photos = document.getElementById('photos')
+
+  mode.subscribe((val) => {
+    switch (val) {
+      case 'programmerMode':
+        photos.style.backgroundColor = 'blue'
+        break
+      case 'designerMode':
+        photos.style.backgroundColor = 'yellow'
+        break
+      case 'writerMode':
+        photos.style.backgroundColor = 'white'
+        break
+      default:
+        photos.style.backgroundColor = 'black'
+        break
+    }
+  })
+</script> -->
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
   <div class="page">
@@ -24,7 +48,9 @@ const yemail = 'patrick_alv@yahoo.com'
       </div>
     </section>
 
-    <section class="photos text"></section>
+    <section class="photos text" id="photos">
+      <Photos />
+    </section>
 
     <section class="modes text">
       <Modes />
@@ -81,6 +107,7 @@ const yemail = 'patrick_alv@yahoo.com'
   .photos
     grid-area: photos
     border: 1px solid white
+    // background-color: red
 
   .modes
     grid-area: modes

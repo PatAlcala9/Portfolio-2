@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.4.2"
+    "astro": "^5.4.2",
+    "nanostores": "^0.11.4"
   },
   "devDependencies": {
     "sass-embedded": "^1.85.1"

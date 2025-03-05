@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "npm:astro@^5.4.2": "5.4.2_sass-embedded@1.85.1_vite@6.2.0__sass-embedded@1.85.1_zod@3.24.2",
+    "npm:nanostores@~0.11.4": "0.11.4",
     "npm:sass-embedded@^1.85.1": "1.85.1"
   },
   "npm": {
@@ -1391,6 +1392,9 @@
     "nanoid@3.3.8": {
       "integrity": "sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w=="
     },
+    "nanostores@0.11.4": {
+      "integrity": "sha512-k1oiVNN4hDK8NcNERSZLQiMfRzEGtfnvZvdBvey3SQbgn8Dcrk0h1I6vpxApjb10PFUflZrgJ2WEZyJQ+5v7YQ=="
+    },
     "neotraverse@0.6.18": {
       "integrity": "sha512-Z4SmBUweYa09+o6pG+eASabEpP6QkQ70yHj351pQoEXIs8uHbaU2DWVmzBANKgflPa47A50PtB2+NgRpQvr7vA=="
     },
@@ -2139,6 +2143,7 @@
     "packageJson": {
       "dependencies": [
         "npm:astro@^5.4.2",
+        "npm:nanostores@~0.11.4",
         "npm:sass-embedded@^1.85.1"
       ]
     }

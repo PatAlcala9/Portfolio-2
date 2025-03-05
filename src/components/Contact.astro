@@ -45,6 +45,9 @@ const yemail = 'patrick_alv@yahoo.com'
     tabPmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
     tabPmail.style.border = 'none'
   })
+
+  const copyButton = document.getElementById('copy_button')
+  copyButton.addEventListener('click', () => navigator.clipboard.writeText(emailDisplay.innerHTML))
 </script>
 
 <section class="contacts">
@@ -53,7 +56,7 @@ const yemail = 'patrick_alv@yahoo.com'
   <div class="contacts__email">
     <section class="contacts__email__row">
       <span class="contacts__email__row__content" id="emailDisplay">{yemail}</span>
-      <div class="contacts__email__row__content__icon">
+      <div class="contacts__email__row__content__icon" id="copy_button">
         <Image src={copy} alt="Yahoo Mail" quality={'mid'} width={16} />
       </div>
     </section>
