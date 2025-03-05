@@ -24,6 +24,8 @@ const yemail = 'patrick_alv@yahoo.com'
       </div>
     </section>
 
+    <section class="photos text"></section>
+
     <section class="modes text">
       <Modes />
     </section>
@@ -37,9 +39,9 @@ const yemail = 'patrick_alv@yahoo.com'
 <style lang="sass">
   .page
     display: grid
-    grid-template-columns: 1.2fr 0.8fr
-    grid-template-rows: 1.5fr 0.5fr
-    gap: 0px 0px
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: 0.6fr 0.4fr
+    gap: 10px
     grid-auto-flow: row
     grid-template-areas: "texts photos" "modes contacts"
 
@@ -54,6 +56,7 @@ const yemail = 'patrick_alv@yahoo.com'
     justify-content: center
     align-items: flex-start
     align-content: flex-start
+    border: 1px solid yellow
 
     &__hello
       font-family: 'Geologica'
@@ -77,10 +80,15 @@ const yemail = 'patrick_alv@yahoo.com'
 
   .photos
     grid-area: photos
+    border: 1px solid white
 
   .modes
     grid-area: modes
+    overflow: hidden
+    border: 1px solid red
 
   .contacts
     grid-area: contacts
+    padding: 2rem
+    border: 1px solid blue
 </style>

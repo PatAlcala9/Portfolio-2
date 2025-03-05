@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import proton from '../assets/images/proton.avif'
 import yahoo from '../assets/images/yahoo.avif'
 import gmail from '../assets/images/gmail.avif'
+import copy from '../assets/images/copy.svg'
 
 const yemail = 'patrick_alv@yahoo.com'
 ---
@@ -50,7 +51,12 @@ const yemail = 'patrick_alv@yahoo.com'
   <span class="contacts__text">Contacts</span>
 
   <div class="contacts__email">
-    <span class="contacts__email__content" id="emailDisplay">{yemail}</span>
+    <section class="contacts__email__row">
+      <span class="contacts__email__row__content" id="emailDisplay">{yemail}</span>
+      <div class="contacts__email__row__content__icon">
+        <Image src={copy} alt="Yahoo Mail" quality={'mid'} width={16} />
+      </div>
+    </section>
   </div>
 
   <div class="contacts__tabs">
@@ -67,6 +73,9 @@ const yemail = 'patrick_alv@yahoo.com'
 </section>
 
 <style lang="sass">
+  .icon
+    color: red
+
   .contacts
     font-size: 1.125rem
     display: flex
@@ -86,8 +95,20 @@ const yemail = 'patrick_alv@yahoo.com'
       height: 3.5rem
       border: 1px solid white
 
-      &__content
-        padding: 0 0 0 1rem
+      &__row
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        &__content
+          padding: 0 0 0 1rem
+
+          &__icon
+            cursor: pointer
+            border: 1px solid white
+            border-radius: 0.25rem
+            padding: 0.25rem 0.5rem
+            margin: 0 1rem 0 1rem
 
     &__tabs
       display: flex
