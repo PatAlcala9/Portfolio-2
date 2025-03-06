@@ -4,22 +4,23 @@
 
 <script>
   import { mode } from '../stores/mode.js'
+  import { gsap } from 'gsap'
 
   const photos = document.getElementById('photos')
 
   mode.subscribe((val) => {
     switch (val) {
       case 'programmerMode':
-        photos.style.backgroundColor = 'blue'
+        gsap.to(photos, { duration: 0.4, backgroundColor: '#0000FF', ease: 'power2.out' })
         break
       case 'designerMode':
-        photos.style.backgroundColor = 'yellow'
+        gsap.to(photos, { duration: 0.4, backgroundColor: '#FFFF00', ease: 'power2.out' })
         break
       case 'writerMode':
-        photos.style.backgroundColor = 'white'
+        gsap.to(photos, { duration: 0.4, backgroundColor: '#FFFFFF', ease: 'power2.out' })
         break
       default:
-        photos.style.backgroundColor = 'black'
+        gsap.to(photos, { duration: 0.4, backgroundColor: '#000000', ease: 'power2.out' })
         break
     }
   })

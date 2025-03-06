@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/geologica": "^5.2.5",
     "astro": "^5.4.2",
+    "gsap": "^3.12.7",
     "nanostores": "^0.11.4"
   },
   "devDependencies": {

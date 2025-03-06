@@ -3,49 +3,18 @@ import MainLayout from '../layouts/MainLayout.astro'
 import Contact from '../components/Contact.astro'
 import Modes from '../components/Modes.astro'
 import Photos from '../components/Photos.astro'
+import Texts from '../components/Texts.astro'
 
 const name = 'Patrick Alvin Alcala'
 const firstname = 'Patrick'
 const secondname = 'Alvin'
 const lastname = 'Alcala'
-
-const yemail = 'patrick_alv@yahoo.com'
 ---
-
-<!-- <script>
-  import { mode } from '../stores/mode.js'
-
-  const photos = document.getElementById('photos')
-
-  mode.subscribe((val) => {
-    switch (val) {
-      case 'programmerMode':
-        photos.style.backgroundColor = 'blue'
-        break
-      case 'designerMode':
-        photos.style.backgroundColor = 'yellow'
-        break
-      case 'writerMode':
-        photos.style.backgroundColor = 'white'
-        break
-      default:
-        photos.style.backgroundColor = 'black'
-        break
-    }
-  })
-</script> -->
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
   <div class="page">
     <section class="texts text">
-      <span class="texts__hello">Hello, I'm</span>
-      <span class="texts__name">Patrick Alvin Alcala</span>
-
-      <div class="positions text">
-        <span class="positions__dev">Fullstack Developer</span>
-        <span class="positions_design">Graphic Designer</span>
-        <span class="positions_write">Writer</span>
-      </div>
+      <Texts />
     </section>
 
     <section class="photos text" id="photos">
@@ -73,41 +42,11 @@ const yemail = 'patrick_alv@yahoo.com'
 
   .texts
     grid-area: texts
-    padding: 0 7.5rem
-    width: 51.5625rem
-    height: 37.5rem
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
-    justify-content: center
-    align-items: flex-start
-    align-content: flex-start
     border: 1px solid yellow
-
-    &__hello
-      font-family: 'Geologica'
-      font-size: 1.5rem
-
-    &__name
-      font-family: 'Geologica Bold'
-      font-size: 3.5rem
-      padding: 0
-
-  .positions
-    margin: 3rem 0 0 0
-    font-size: 1.5rem
-    display: flex
-    flex-direction: column
-    gap: 0.5rem
-    flex-wrap: wrap
-    justify-content: center
-    align-items: flex-start
-    align-content: flex-start
 
   .photos
     grid-area: photos
     border: 1px solid white
-    // background-color: red
 
   .modes
     grid-area: modes

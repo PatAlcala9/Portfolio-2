@@ -1,0 +1,75 @@
+---
+
+---
+
+<script>
+  import { mode } from '../stores/mode'
+  import { gsap } from 'gsap'
+
+  const dev = document.getElementById('positions__dev')
+  const design = document.getElementById('positions__design')
+  const write = document.getElementById('positions__write')
+
+  const activeSize = '2rem'
+  const inactiveSize = '1.5rem'
+
+  mode.subscribe((value) => {
+    if (value === 'programmerMode') {
+      gsap.to(dev, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
+      gsap.to(design, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(write, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+    } else if (value === 'designerMode') {
+      gsap.to(dev, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(design, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
+      gsap.to(write, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+    } else if (value === 'writerMode') {
+      gsap.to(dev, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(design, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(write, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
+    }
+  })
+</script>
+
+<section class="texts">
+  <span class="texts__hello">Hello, I'm</span>
+  <span class="texts__name">Patrick Alvin Alcala</span>
+
+  <div class="positions text">
+    <span class="positions__dev" id="positions__dev">Fullstack Developer</span>
+    <span class="positions__design" id="positions__design">Graphic Designer</span>
+    <span class="positions__write" id="positions__write">Writer</span>
+  </div>
+</section>
+
+<style lang="sass">
+  .texts
+    padding: 0 7.5rem
+    width: 51.5625rem
+    height: 37.5rem
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    align-content: flex-start
+
+    &__hello
+      font-size: 1.5rem
+
+    &__name
+      font-weight: bold
+      font-size: 3.5rem
+      padding: 0
+
+  .positions
+    margin: 3rem 0 0 0
+    font-size: 1.5rem
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    align-content: flex-start
+    font-weight: normal
+</style>

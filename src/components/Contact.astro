@@ -5,7 +5,7 @@ import yahoo from '../assets/images/yahoo.avif'
 import gmail from '../assets/images/gmail.avif'
 import copy from '../assets/images/copy.svg'
 
-const yemail = 'patrick_alv@yahoo.com'
+const email = 'patrick_alv@yahoo.com'
 ---
 
 <script>
@@ -55,7 +55,7 @@ const yemail = 'patrick_alv@yahoo.com'
 
   <div class="contacts__email">
     <section class="contacts__email__row">
-      <span class="contacts__email__row__content" id="emailDisplay">{yemail}</span>
+      <span class="contacts__email__row__content" id="emailDisplay">{email}</span>
       <div class="contacts__email__row__content__icon" id="copy_button">
         <Image src={copy} alt="Yahoo Mail" quality={'mid'} width={16} />
       </div>
@@ -64,21 +64,18 @@ const yemail = 'patrick_alv@yahoo.com'
 
   <div class="contacts__tabs">
     <div class="contacts__tab__selected" id="tabYmail">
-      <Image src={yahoo} alt="Yahoo Mail" quality={'mid'} width={90} />
+      <Image src={yahoo} alt="Yahoo Mail" quality={'mid'} width={80} />
     </div>
     <div class="contacts__tab" id="tabGmail">
-      <Image src={gmail} alt="Google Mail" quality={'mid'} width={80} />
+      <Image src={gmail} alt="Google Mail" quality={'mid'} width={70} />
     </div>
     <div class="contacts__tab" id="tabPmail">
-      <Image src={proton} alt="Proton Mail" quality={'mid'} width={100} />
+      <Image src={proton} alt="Proton Mail" quality={'mid'} width={90} />
     </div>
   </div>
 </section>
 
 <style lang="sass">
-  .icon
-    color: red
-
   .contacts
     font-size: 1.125rem
     display: flex
@@ -118,8 +115,6 @@ const yemail = 'patrick_alv@yahoo.com'
       flex-direction: row
       gap: 0.6875rem
       width: 26.6875rem
-      // height: 2.125rem
-      // background-color: blue
 
     &__tab
       display: grid
