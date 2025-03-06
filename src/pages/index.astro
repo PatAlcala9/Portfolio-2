@@ -32,6 +32,8 @@ const lastname = 'Alcala'
 </MainLayout>
 
 <style lang="sass">
+  @use '/src/assets/css/variables.sass' as vars
+
   .page
     display: grid
     grid-template-columns: repeat(2, 1fr)
@@ -39,6 +41,12 @@ const lastname = 'Alcala'
     gap: 10px
     grid-auto-flow: row
     grid-template-areas: "texts photos" "modes contacts"
+
+    @media screen and (max-width: vars.$pc)
+      grid-template-columns: 1fr
+      grid-template-rows: auto
+      gap: 10px
+      grid-template-areas: "texts" "photos" "modes" "contacts"
 
   .texts
     grid-area: texts
