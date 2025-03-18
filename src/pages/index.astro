@@ -4,6 +4,7 @@ import Contact from '../components/Contact.astro'
 import Modes from '../components/Modes.astro'
 import Photos from '../components/Photos.astro'
 import Texts from '../components/Texts.astro'
+import Scroller from '../components/Scroller.astro'
 
 const name = 'Patrick Alvin Alcala'
 const firstname = 'Patrick'
@@ -29,6 +30,10 @@ const lastname = 'Alcala'
       <Contact />
     </section>
   </div>
+
+  <div>
+    <Scroller />
+  </div>
 </MainLayout>
 
 <style lang="sass">
@@ -42,7 +47,7 @@ const lastname = 'Alcala'
     grid-auto-flow: row
     grid-template-areas: "texts photos" "modes contacts"
 
-    @media screen and (max-width: vars.$pc)
+    @media screen and (max-width: vars.$tablet)
       grid-template-columns: 1fr
       grid-template-rows: auto
       gap: 10px

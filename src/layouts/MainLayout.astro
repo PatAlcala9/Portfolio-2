@@ -2,6 +2,45 @@
 const { title, pageDescription } = Astro.props
 ---
 
+<script>
+  import { mode } from '../stores/mode.js'
+  import { gsap } from 'gsap'
+
+  const body = document.getElementById('body')
+
+  mode.subscribe((val) => {
+    switch (val) {
+      case 'programmerMode':
+        gsap.to(body, {
+          duration: 0.4,
+          backgroundImage: "url('src/assets/images/programming.avif'), url('src/assets/images/programming.webp')",
+          backgroundSize: 'cover',
+          ease: 'power2.out',
+        })
+        break
+      case 'designerMode':
+        gsap.to(body, {
+          duration: 0.4,
+          backgroundImage: "url('src/assets/images/designing.avif'), url('src/assets/images/designing.webp')",
+          backgroundSize: 'cover',
+          ease: 'power2.out',
+        })
+        break
+      case 'writerMode':
+        gsap.to(body, {
+          duration: 0.4,
+          backgroundImage: "url('src/assets/images/writing.avif'), url('src/assets/images/writing.webp')",
+          backgroundSize: 'cover',
+          ease: 'power2.out',
+        })
+        break
+      default:
+        gsap.to(body, { duration: 0.4, backgroundColor: 'rgba(245, 245, 245, 0.9)', backgroundImage: 'none', ease: 'power2.out' })
+        break
+    }
+  })
+</script>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,18 +51,20 @@ const { title, pageDescription } = Astro.props
     <title>{title}</title>
   </head>
 
-  <body class="layout">
+  <body class="layout" id="body">
     <slot />
   </body>
 </html>
 
 <style lang="sass" is:global>
+  @use '/src/assets/css/variables.sass' as vars
+
   .text
-    font-family: 'Geologica'
-    color: #f5f5f5
+    font-family: vars.$fontFamily
+    color: vars.$textColor
 
   .layout
-    background: #0d0e14
+    background-color: vars.$backgroundColor
     position: absolute
     top: 0
     left: 0
