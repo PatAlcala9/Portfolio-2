@@ -5,38 +5,61 @@ const { title, pageDescription } = Astro.props
 <script>
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
-  // import varsjs from '../assets/js/variables.js'
 
   const body = document.getElementById('body')
+  const layout = document.getElementById('layout')
+
+  const modeProgrammerBackgroundColor = 'rgba(14, 19, 23, 1)'
+  const modeDesignerBackgroundColor = 'rgba(154, 154, 154, 1)'
+  const modeWriterBackgroundColor = 'rgba(162, 159, 112, 1)'
+
+  const duration = 0.4
+  const backgroundSize = 'cover'
+  const ease = 'power2.out'
 
   mode.subscribe((val) => {
     switch (val) {
       case 'programmerMode':
         gsap.to(body, {
-          duration: 0.4,
-          backgroundImage: "url('src/assets/images/programming.avif'), url('src/assets/images/programming.webp')",
-          backgroundSize: 'cover',
-          ease: 'power2.out',
+          duration,
+          backgroundImage: "url('src/assets/images/programming2.avif'), url('src/assets/images/programming2.webp')",
+          backgroundSize,
+          ease,
+        })
+        gsap.to(layout, {
+          duration,
+          backgroundColor: modeProgrammerBackgroundColor,
+          ease,
         })
         break
       case 'designerMode':
         gsap.to(body, {
-          duration: 0.4,
-          backgroundImage: "url('src/assets/images/designing.avif'), url('src/assets/images/designing.webp')",
-          backgroundSize: 'cover',
-          ease: 'power2.out',
+          duration,
+          backgroundImage: "url('src/assets/images/designing2.avif'), url('src/assets/images/designing2.webp')",
+          backgroundSize,
+          ease,
+        })
+        gsap.to(layout, {
+          duration,
+          backgroundColor: modeDesignerBackgroundColor,
+          ease,
         })
         break
       case 'writerMode':
         gsap.to(body, {
-          duration: 0.4,
+          duration,
           backgroundImage: "url('src/assets/images/writing.avif'), url('src/assets/images/writing.webp')",
-          backgroundSize: 'cover',
-          ease: 'power2.out',
+          backgroundSize,
+          ease,
+        })
+        gsap.to(layout, {
+          duration,
+          backgroundColor: modeWriterBackgroundColor,
+          ease,
         })
         break
       default:
-        gsap.to(body, { duration: 0.4, backgroundColor: 'none', backgroundImage: 'none', ease: 'power2.out' })
+        gsap.to(body, { duration: 0.4, backgroundColor: 'none', backgroundImage: "url('src/assets/images/background2.avif'), url('src/assets/images/background2.webp')", ease: 'power2.out' })
         break
     }
   })
@@ -52,7 +75,8 @@ const { title, pageDescription } = Astro.props
     <title>{title}</title>
   </head>
 
-  <body class="layout" id="body">
+  <body class="layout" id="layout">
+    <div id="body"></div>
     <slot />
   </body>
 </html>
@@ -75,4 +99,15 @@ const { title, pageDescription } = Astro.props
     height: 100svh
     overflow: auto
     margin: 0
+    object-fit: cover
+
+  #body
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    object-fit: cover
+    z-index: -1
+    opacity: 0.5
 </style>

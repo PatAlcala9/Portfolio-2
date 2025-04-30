@@ -12,9 +12,11 @@
     "@fontsource-variable/geologica": "^5.2.5",
     "astro": "^5.4.2",
     "gsap": "^3.12.7",
-    "nanostores": "^0.11.4"
+    "nanostores": "^0.11.4",
+    "sharp": "^0.34.1"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "sass-embedded": "^1.85.1"
   }
 }
