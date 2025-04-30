@@ -5,6 +5,7 @@ const { title, pageDescription } = Astro.props
 <script>
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
+  // import varsjs from '../assets/js/variables.js'
 
   const body = document.getElementById('body')
 
@@ -35,7 +36,7 @@ const { title, pageDescription } = Astro.props
         })
         break
       default:
-        gsap.to(body, { duration: 0.4, backgroundColor: 'rgba(245, 245, 245, 0.9)', backgroundImage: 'none', ease: 'power2.out' })
+        gsap.to(body, { duration: 0.4, backgroundColor: 'none', backgroundImage: 'none', ease: 'power2.out' })
         break
     }
   })

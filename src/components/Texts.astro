@@ -9,32 +9,39 @@
   const dev = document.getElementById('positions__dev')
   const design = document.getElementById('positions__design')
   const write = document.getElementById('positions__write')
+  const texts = document.getElementById('texts')
 
   const activeSize = '2rem'
   const inactiveSize = '1.5rem'
+  const modeProgrammerTextColor = 'rgba(36, 51, 59, 1)'
+  const modeDesinerTextColor = 'rgba(220, 221, 183, 1)'
+  const modeWriterTextColor = 'rgba(46, 47, 48, 1)'
 
   mode.subscribe((value) => {
     if (value === 'programmerMode') {
       gsap.to(dev, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
       gsap.to(design, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
       gsap.to(write, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(texts, { duration: 0.4, color: modeProgrammerTextColor, ease: 'power2.out' })
     } else if (value === 'designerMode') {
       gsap.to(dev, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
       gsap.to(design, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
       gsap.to(write, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
+      gsap.to(texts, { duration: 0.4, color: modeDesinerTextColor, ease: 'power2.out' })
     } else if (value === 'writerMode') {
       gsap.to(dev, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
       gsap.to(design, { duration: 0.4, fontSize: inactiveSize, fontWeight: 'normal', ease: 'power2.out' })
       gsap.to(write, { duration: 0.4, fontSize: activeSize, fontWeight: 'bold', ease: 'power2.out' })
+      gsap.to(texts, { duration: 0.4, color: modeWriterTextColor, ease: 'power2.out' })
     }
   })
 </script>
 
-<section class="texts">
+<section class="texts" id="texts">
   <span class="texts__hello">Hello, I'm</span>
   <span class="texts__name">Patrick Alvin Alcala</span>
 
-  <div class="positions text">
+  <div class="positions">
     <span class="positions__dev" id="positions__dev">Fullstack Developer</span>
     <span class="positions__design" id="positions__design">Graphic Designer</span>
     <span class="positions__write" id="positions__write">Writer</span>
