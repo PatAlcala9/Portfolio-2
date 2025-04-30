@@ -10,7 +10,7 @@ const { title, pageDescription } = Astro.props
   const layout = document.getElementById('layout')
 
   const modeProgrammerBackgroundColor = 'rgba(14, 19, 23, 1)'
-  const modeDesignerBackgroundColor = 'rgba(154, 154, 154, 1)'
+  const modeDesignerBackgroundColor = 'rgba(19, 29, 29, 1)'
   const modeWriterBackgroundColor = 'rgba(162, 159, 112, 1)'
 
   const duration = 0.4
@@ -35,7 +35,7 @@ const { title, pageDescription } = Astro.props
       case 'designerMode':
         gsap.to(body, {
           duration,
-          backgroundImage: "url('src/assets/images/designing2.avif'), url('src/assets/images/designing2.webp')",
+          backgroundImage: "url('src/assets/images/designing.avif'), url('src/assets/images/designing.webp')",
           backgroundSize,
           ease,
         })
