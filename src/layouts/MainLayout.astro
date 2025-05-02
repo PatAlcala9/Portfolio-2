@@ -10,13 +10,9 @@ const { title, pageDescription } = Astro.props
   const body = document.getElementById('body')
   const layout = document.getElementById('layout')
 
-  const modeProgrammerBackgroundColor = vars.modeProgrammerBackgroundColor
-  const modeDesignerBackgroundColor = vars.modeDesignerBackgroundColor
-  const modeWriterBackgroundColor = vars.modeWriterBackgroundColor
-
-  const duration = 0.4
-  const backgroundSize = 'cover'
-  const ease = 'power2.out'
+  const duration = vars.duration
+  const backgroundSize = vars.backgroundSize
+  const ease = vars.ease
 
   mode.subscribe((val) => {
     switch (val) {
@@ -25,11 +21,11 @@ const { title, pageDescription } = Astro.props
           duration,
           backgroundImage: "url('src/assets/images/programming2.avif'), url('src/assets/images/programming2.webp')",
           backgroundSize,
-          ease,
+          ease: vars.ease,
         })
         gsap.to(layout, {
           duration,
-          backgroundColor: modeProgrammerBackgroundColor,
+          backgroundColor: vars.modeProgrammerBackgroundColor,
           ease,
         })
 
@@ -43,7 +39,7 @@ const { title, pageDescription } = Astro.props
         })
         gsap.to(layout, {
           duration,
-          backgroundColor: modeDesignerBackgroundColor,
+          backgroundColor: vars.modeDesignerBackgroundColor,
           ease,
         })
         break
@@ -56,12 +52,12 @@ const { title, pageDescription } = Astro.props
         })
         gsap.to(layout, {
           duration,
-          backgroundColor: modeWriterBackgroundColor,
+          backgroundColor: vars.modeWriterBackgroundColor,
           ease,
         })
         break
       default:
-        gsap.to(body, { duration: 0.4, backgroundColor: 'none', backgroundImage: "url('src/assets/images/background.avif'), url('src/assets/images/background.webp')", ease: 'power2.out' })
+        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: "url('src/assets/images/background.avif'), url('src/assets/images/background.webp')", ease })
         break
     }
   })
@@ -81,10 +77,6 @@ const { title, pageDescription } = Astro.props
     <div id="body"></div>
     <slot />
   </body>
-
-  <footer>
-    <div class="unload"></div>
-  </footer>
 </html>
 
 <style lang="sass" is:global>
@@ -148,8 +140,4 @@ const { title, pageDescription } = Astro.props
     object-fit: cover
     z-index: -1
     opacity: 0.5
-
-  .unload
-    display: none
-    background-image: url('src/assets/images/background.avif')
 </style>

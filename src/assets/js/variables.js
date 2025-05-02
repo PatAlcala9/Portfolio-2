@@ -8,7 +8,7 @@ const modeWriterFontFamily = 'Playfair Display Variable';
 
 const modeProgrammerTextColor = 'rgba(110, 141, 159, 1)';
 const modeProgrammerBoxBorder = '5px solid rgba(32, 42, 50, 0.8)';
-const modeDesinerTextColor = 'rgba(220, 221, 183, 1)';
+const modeDesignerTextColor = 'rgba(220, 221, 183, 1)';
 const modeWriterTextColor = 'rgba(0, 0, 0, 1)';
 
 const modeProgrammerBackgroundColor = 'rgba(21, 29, 36, 1)';
@@ -33,7 +33,7 @@ const vars = {
 
   modeProgrammerTextColor: modeProgrammerTextColor,
   modeProgrammerBoxBorder: modeProgrammerBoxBorder,
-  modeDesinerTextColor: modeDesinerTextColor,
+  modeDesignerTextColor: modeDesignerTextColor,
   modeWriterTextColor: modeWriterTextColor,
 
   modeProgrammerBackgroundColor: modeProgrammerBackgroundColor,

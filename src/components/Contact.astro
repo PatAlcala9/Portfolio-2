@@ -9,6 +9,15 @@ const email = 'patrick_alv@yahoo.com'
 ---
 
 <script>
+  import { mode } from '../stores/mode.js'
+  import { gsap } from 'gsap'
+  import vars from '../assets/js/variables.js'
+  import programmingCopy from '../assets/images/bx--copy.svg'
+
+  const duration = vars.duration
+  const backgroundSize = vars.backgroundSize
+  const ease = vars.ease
+
   const yemail = 'patrick_alv@yahoo.com'
   const gemail = 'pat.alcala9@gmail.com'
   const pemail = 'pat.alcala9@proton.me'
@@ -17,52 +26,525 @@ const email = 'patrick_alv@yahoo.com'
   const tabYmail = document.getElementById('tabYmail')
   const tabGmail = document.getElementById('tabGmail')
   const tabPmail = document.getElementById('tabPmail')
+  const contactText = document.getElementById('contactText')
+  const contactEmail = document.getElementById('contactEmail')
+  const contactTabs = document.getElementById('contactTabs')
+  const copyIcon = document.getElementById('copy_button_icon')
+
+  const tabBackgroundColor = 'hsl(208, 26.30%, 11.20%)'
+  const tabSelectedBackgroundColor = 'hsl(208, 26.30%, 50.20%)'
 
   tabYmail.addEventListener('click', () => {
     emailDisplay.innerText = yemail
-    tabYmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
-    tabYmail.style.border = 'none'
-    tabGmail.style.backgroundColor = 'transparent'
-    tabGmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
-    tabPmail.style.backgroundColor = 'transparent'
-    tabPmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+
+    mode.subscribe((val) => {
+      switch (val) {
+        case 'programmerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+
+          break
+        case 'designerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          break
+        case 'writerMode':
+          break
+        default:
+          const defaultTabSelectedBackgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+          const defaultTabSelectedBorder = 'none'
+          const defaultTabBackgroundColor = 'transparent'
+          const defaultTabBorder = '1px solid hsla(240, 24%, 58%, 0.8)'
+
+          gsap.to(tabYmail, {
+            duration,
+            border: defaultTabSelectedBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabSelectedBackgroundColor,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          break
+      }
+    })
   })
+
   tabGmail.addEventListener('click', () => {
     emailDisplay.innerText = gemail
-    tabYmail.style.backgroundColor = 'transparent'
-    tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
-    tabGmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
-    tabGmail.style.border = 'none'
-    tabPmail.style.backgroundColor = 'transparent'
-    tabPmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    // tabYmail.style.backgroundColor = 'transparent'
+    //   tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    //   tabGmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+    //   tabGmail.style.border = 'none'
+    //   tabPmail.style.backgroundColor = 'transparent'
+    //   tabPmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+
+    mode.subscribe((val) => {
+      switch (val) {
+        case 'programmerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+
+          break
+        case 'designerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          break
+        case 'writerMode':
+          break
+        default:
+          const defaultTabSelectedBackgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+          const defaultTabSelectedBorder = 'none'
+          const defaultTabBackgroundColor = 'transparent'
+          const defaultTabBorder = '1px solid hsla(240, 24%, 58%, 0.8)'
+
+          gsap.to(tabYmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            border: defaultTabSelectedBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabSelectedBackgroundColor,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          break
+      }
+    })
   })
+
   tabPmail.addEventListener('click', () => {
     emailDisplay.innerText = pemail
-    tabYmail.style.backgroundColor = 'transparent'
-    tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
-    tabGmail.style.backgroundColor = 'transparent'
-    tabGmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
-    tabPmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
-    tabPmail.style.border = 'none'
+    // tabYmail.style.backgroundColor = 'transparent'
+    // tabYmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    // tabGmail.style.backgroundColor = 'transparent'
+    // tabGmail.style.border = '1px solid hsla(240, 24%, 58%, 0.8)'
+    // tabPmail.style.backgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+    // tabPmail.style.border = 'none'
+
+    mode.subscribe((val) => {
+      switch (val) {
+        case 'programmerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+
+          break
+        case 'designerMode':
+          gsap.to(tabYmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabSelectedBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            color: vars.modeProgrammerTextColor,
+            fontFamily: vars.modeProgrammerFontFamily,
+            fontWeight: '500',
+            border: `1px solid ${vars.modeProgrammerTextColor}`,
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.5rem',
+            backgroundColor: tabBackgroundColor,
+            backgroundSize,
+            ease,
+          })
+          break
+        case 'writerMode':
+          break
+        default:
+          const defaultTabSelectedBackgroundColor = 'hsla(240, 24%, 75%, 0.8)'
+          const defaultTabSelectedBorder = 'none'
+          const defaultTabBackgroundColor = 'transparent'
+          const defaultTabBorder = '1px solid hsla(240, 24%, 58%, 0.8)'
+
+          gsap.to(tabYmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          gsap.to(tabGmail, {
+            duration,
+            border: defaultTabBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabBackgroundColor,
+            ease,
+          })
+          gsap.to(tabPmail, {
+            duration,
+            border: defaultTabSelectedBorder,
+            padding: '0',
+            borderRadius: '0',
+            backgroundColor: defaultTabSelectedBackgroundColor,
+            ease,
+          })
+          break
+      }
+    })
   })
 
   const copyButton = document.getElementById('copy_button')
   copyButton.addEventListener('click', () => navigator.clipboard.writeText(emailDisplay.innerHTML))
+
+  mode.subscribe((val) => {
+    switch (val) {
+      case 'programmerMode':
+        gsap.to(contactText, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: vars.modeProgrammerBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(contactEmail, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0',
+          borderRadius: '0.5rem',
+          backgroundColor: vars.modeProgrammerBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(copyButton, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: vars.modeProgrammerBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(tabYmail, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: tabSelectedBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(tabGmail, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: tabBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(tabPmail, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: tabBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(tabPmail, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          fontWeight: '500',
+          border: `1px solid ${vars.modeProgrammerTextColor}`,
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: tabBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+
+        break
+      case 'designerMode':
+        gsap.to(contactText, {
+          duration,
+          color: vars.modeDesignerTextColor,
+          fontFamily: vars.modeDesignerFontFamily,
+          fontWeight: '500',
+          border: 'none',
+          padding: '0',
+          borderRadius: '0.5rem',
+          backgroundColor: 'transparent',
+          backgroundSize,
+          ease,
+        })
+
+        break
+      case 'writerMode':
+        gsap.to(contactText, {
+          duration,
+          color: vars.modeWriterTextColor,
+          fontFamily: vars.modeWriterFontFamily,
+          fontWeight: '500',
+          border: 'none',
+          padding: '0.5rem',
+          borderRadius: '0.5rem',
+          backgroundColor: vars.modeWriterBackgroundColor,
+          backgroundSize,
+          ease,
+        })
+
+        break
+      default:
+        break
+    }
+  })
 </script>
 
 <section class="contacts">
-  <span class="contacts__text">Contacts</span>
+  <span class="contacts__text" id="contactText">Contacts</span>
 
-  <div class="contacts__email">
+  <div class="contacts__email" id="contactEmail">
     <section class="contacts__email__row">
       <span class="contacts__email__row__content" id="emailDisplay">{email}</span>
       <div class="contacts__email__row__content__icon" id="copy_button">
-        <Image src={copy} alt="Yahoo Mail" quality={'mid'} width={16} />
+        <Image id="copy_button_icon" src={copy} alt="Yahoo Mail" quality={'mid'} width={16} />
+        <!-- <Icon name="tabler:copy" /> -->
       </div>
     </section>
   </div>
 
-  <div class="contacts__tabs">
+  <div class="contacts__tabs" id="contactTabs">
     <div class="contacts__tab__selected" id="tabYmail">
       <Image src={yahoo} alt="Yahoo Mail" quality={'mid'} width={80} />
     </div>
@@ -125,7 +607,7 @@ const email = 'patrick_alv@yahoo.com'
       width: 8.4375rem
       height: 2.125rem
       background-color: transparent
-      border: 1px solid vars.$borderColor
+      border: 1px solid hsla(240, 24%, 58%, 0.8)
       cursor: pointer
 
       &__selected
@@ -133,8 +615,7 @@ const email = 'patrick_alv@yahoo.com'
         place-items: center
         width: 8.4375rem
         height: 2.125rem
-        background-color: vars.$backgroundColor
-        color: vars.$textColor
+        background-color: hsla(240, 24%, 75%, 0.8)
         border: none
         cursor: pointer
 </style>

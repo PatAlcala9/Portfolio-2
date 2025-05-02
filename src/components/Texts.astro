@@ -18,7 +18,7 @@
   const inactiveSize = '1.5rem'
 
   const modeProgrammerTextColor = vars.modeProgrammerTextColor
-  const modeDesinerTextColor = vars.modeDesinerTextColor
+  const modeDesignerTextColor = vars.modeDesignerTextColor
   const modeWriterTextColor = vars.modeWriterTextColor
 
   const modeProgrammerFontFamily = vars.modeProgrammerFontFamily
@@ -35,7 +35,7 @@
       gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
       gsap.to(design, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
       gsap.to(write, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(texts, { duration, color: modeDesinerTextColor, fontFamily: modeDesignerFontFamily, ease })
+      gsap.to(texts, { duration, color: modeDesignerTextColor, fontFamily: modeDesignerFontFamily, ease })
     } else if (value === 'writerMode') {
       gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
       gsap.to(design, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
