@@ -6,6 +6,14 @@ const { title, pageDescription } = Astro.props
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
   import vars from '../assets/js/variables.js'
+  import backgroundA from '../assets/images/backgroundA.avif'
+  import backgroundW from '../assets/images/backgroundW.webp'
+  import programmingA from '../assets/images/programmingA.avif'
+  import programmingW from '../assets/images/programmingW.webp'
+  import designingA from '../assets/images/designingA.avif'
+  import designingW from '../assets/images/designingW.webp'
+  import writingA from '../assets/images/writingA.avif'
+  import writingW from '../assets/images/writingW.webp'
 
   const body = document.getElementById('body')
   const layout = document.getElementById('layout')
@@ -19,7 +27,7 @@ const { title, pageDescription } = Astro.props
       case 'programmerMode':
         gsap.to(body, {
           duration,
-          backgroundImage: "url('src/assets/images/programming2.avif'), url('src/assets/images/programming2.webp')",
+          backgroundImage: `url('${programmingA.src}'), url('${programmingW.src}')`,
           backgroundSize,
           ease: vars.ease,
         })
@@ -33,7 +41,7 @@ const { title, pageDescription } = Astro.props
       case 'designerMode':
         gsap.to(body, {
           duration,
-          backgroundImage: "url('src/assets/images/designing.avif'), url('src/assets/images/designing.webp')",
+          backgroundImage: `url('${designingA.src}'), url('${designingW.src}')`,
           backgroundSize,
           ease,
         })
@@ -46,7 +54,7 @@ const { title, pageDescription } = Astro.props
       case 'writerMode':
         gsap.to(body, {
           duration,
-          backgroundImage: "url('src/assets/images/writing.avif'), url('src/assets/images/writing.webp')",
+          backgroundImage: `url('${writingA.src}'), url('${writingW.src}')`,
           backgroundSize,
           ease,
         })
@@ -57,7 +65,7 @@ const { title, pageDescription } = Astro.props
         })
         break
       default:
-        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: "url('src/assets/images/background.avif'), url('src/assets/images/background.webp')", ease })
+        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`, ease })
         break
     }
   })
