@@ -2,8 +2,54 @@
 
 ---
 
-<section class="scroller">
-  <span class="scroller__content" id="scrollerContent"> Scroll Down </span>
+<script>
+  import { mode } from '../stores/mode.js'
+  import { gsap } from 'gsap'
+  import vars from '../assets/js/variables.js'
+
+  const scroller = document.getElementById('scrollerContent')
+
+  const duration = vars.duration
+  const backgroundSize = vars.backgroundSize
+  const ease = vars.ease
+
+  mode.subscribe((val) => {
+    switch (val) {
+      case 'programmerMode':
+        gsap.to(scroller, {
+          duration,
+          color: vars.modeProgrammerTextColor,
+          fontFamily: vars.modeProgrammerFontFamily,
+          innerText: 'Scroll Down to Explore',
+          ease,
+        })
+        break
+      case 'designerMode':
+        gsap.to(scroller, {
+          duration,
+          color: vars.modeDesinerTextColor,
+          fontFamily: vars.modeDesignerFontFamily,
+          innerText: 'Scroll Down to Explore',
+          ease,
+        })
+        break
+      case 'writerMode':
+        gsap.to(scroller, {
+          duration,
+          color: vars.modeWriterTextColor,
+          fontFamily: vars.modeWriterFontFamily,
+          innerText: 'Scroll Down to Explore',
+          ease,
+        })
+        break
+      default:
+        break
+    }
+  })
+</script>
+
+<section class="scroller" id="scroller">
+  <span class="scroller__content" id="scrollerContent"> Please Select a Mode </span>
 </section>
 
 <style lang="sass">
@@ -15,7 +61,13 @@
     align-items: center
     height: 10vh
     background-color: transparent
-    font-family: vars.$fontFamily
-    font-size: 2rem
-    color: vars.$textColor
+
+    &__content
+      color: vars.$textColor
+      font-family: vars.$fontFamily
+      font-weight: 300
+      text-transform: uppercase
+      letter-spacing: 0.1rem
+      transition: all 0.3s ease-in-out
+      font-size: 1.2rem
 </style>

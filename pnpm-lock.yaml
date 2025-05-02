@@ -8,15 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/fira-code':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource-variable/geologica':
         specifier: ^5.2.5
         version: 5.2.5
+      '@fontsource-variable/montserrat':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.2.5
+        version: 5.2.5
       astro:
-        specifier: ^5.4.2
-        version: 5.7.9(rollup@4.40.1)(sass-embedded@1.87.0)(typescript@5.8.3)
+        specifier: ^5.7.10
+        version: 5.7.10(rollup@4.40.1)(sass-embedded@1.87.0)(typescript@5.8.3)
       gsap:
-        specifier: ^3.12.7
-        version: 3.12.7
+        specifier: ^3.13.0
+        version: 3.13.0
       nanostores:
         specifier: ^0.11.4
         version: 0.11.4
@@ -226,8 +235,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/fira-code@5.2.5':
+    resolution: {integrity: sha512-rw0z/D9Tsp7asvwK/XFHz+xMkgR7MPRCa6U9e77alsmJQFqniEWt/c+1xKCZR2omEw1hVP7ej48Z1O8c/YiSVg==}
+
   '@fontsource-variable/geologica@5.2.5':
     resolution: {integrity: sha512-jNjF5bpffc9y6p/cVGZSSnAA06JgxQjt/7Ux+t19xmroHjQhPkGBIY72chy3XUg4GBH72ByPzdAT1RxOQNiWNQ==}
+
+  '@fontsource-variable/montserrat@5.2.5':
+    resolution: {integrity: sha512-Mfg/AiXwhPLAAgLCqzugFUs/PLprbHzXMhPVrf35q5od4/wHjVqtm0bI000tKGUGDZ3gDpId/+cqufcYHAAAEQ==}
+
+  '@fontsource-variable/playfair-display@5.2.5':
+    resolution: {integrity: sha512-nzSCC5pbWHjkJBqjPe81cPIC7fqJ6U5DwJ6tec7vF1bQ2DJnaKRBZluRQJuseFpACZLTN8LeN/1gBQEA7PnKOw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -645,8 +663,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.7.9:
-    resolution: {integrity: sha512-P0cLijpmu4xZEXIh83ROOJqiCWRA7KSo24nhRLIjbMkiPElXu2qL1c28m7xhylCXeHa0lnCGPLyNjs1Wx3GyxA==}
+  astro@5.7.10:
+    resolution: {integrity: sha512-9TQcFZqP2w6//JXXUHfw8/5PX7KUx9EkG5O3m+hISuyeUztvjY1q5+p7+C5HiXyg24Zs3KkpieoL5BGRXGCAGA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -941,8 +959,8 @@ packages:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
 
-  gsap@3.12.7:
-    resolution: {integrity: sha512-V4GsyVamhmKefvcAKaoy0h6si0xX7ogwBoBSs2CTJwt7luW0oZzC0LhdkyuKV8PJAXr7Yaj8pMjCKD4GJ+eEMg==}
+  gsap@3.13.0:
+    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
 
   h3@1.15.3:
     resolution: {integrity: sha512-z6GknHqyX0h9aQaTx22VZDf6QyZn+0Nh+Ym8O/u0SGSkyF5cuTJYKlc8MkzW3Nzf9LE1ivcpmYC3FUGpywhuUQ==}
@@ -2056,7 +2074,13 @@ snapshots:
   '@esbuild/win32-x64@0.25.3':
     optional: true
 
+  '@fontsource-variable/fira-code@5.2.5': {}
+
   '@fontsource-variable/geologica@5.2.5': {}
+
+  '@fontsource-variable/montserrat@5.2.5': {}
+
+  '@fontsource-variable/playfair-display@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -2371,7 +2395,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.7.9(rollup@4.40.1)(sass-embedded@1.87.0)(typescript@5.8.3):
+  astro@5.7.10(rollup@4.40.1)(sass-embedded@1.87.0)(typescript@5.8.3):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -2735,7 +2759,7 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  gsap@3.12.7: {}
+  gsap@3.13.0: {}
 
   h3@1.15.3:
     dependencies:
