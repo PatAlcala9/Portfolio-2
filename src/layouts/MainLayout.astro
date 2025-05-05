@@ -6,8 +6,8 @@ const { title, pageDescription } = Astro.props
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
   import vars from '../assets/js/variables.js'
-  import backgroundA from '../assets/images/backgroundA.avif'
-  import backgroundW from '../assets/images/backgroundW.webp'
+  import backgroundA from '../assets/images/backgroundA2.avif'
+  import backgroundW from '../assets/images/backgroundW2.webp'
   import programmingA from '../assets/images/programmingA.avif'
   import programmingW from '../assets/images/programmingW.webp'
   import designingA from '../assets/images/designingA.avif'
@@ -21,6 +21,8 @@ const { title, pageDescription } = Astro.props
   const duration = vars.duration
   const backgroundSize = vars.backgroundSize
   const ease = vars.ease
+  const opacityDefault = 0.2
+  const opacityModed = 0.5
 
   mode.subscribe((val) => {
     switch (val) {
@@ -28,7 +30,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(body, {
           duration,
           backgroundImage: `url('${programmingA.src}'), url('${programmingW.src}')`,
-          opacity: 0.5,
+          opacity: opacityModed,
           backgroundSize,
           ease: vars.ease,
         })
@@ -37,12 +39,13 @@ const { title, pageDescription } = Astro.props
           backgroundColor: vars.modeProgrammerBackgroundColor,
           ease,
         })
+
         break
       case 'designerMode':
         gsap.to(body, {
           duration,
           backgroundImage: `url('${designingA.src}'), url('${designingW.src}')`,
-          opacity: 0.5,
+          opacity: opacityModed,
           backgroundSize,
           ease,
         })
@@ -56,7 +59,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(body, {
           duration,
           backgroundImage: `url('${writingA.src}'), url('${writingW.src}')`,
-          opacity: 0.5,
+          opacity: opacityModed,
           backgroundSize,
           ease,
         })
@@ -69,14 +72,10 @@ const { title, pageDescription } = Astro.props
       default:
         gsap.to(body, {
           duration,
+          backgroundColor: 'none',
           backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`,
-          opacity: 0.1,
+          opacity: opacityDefault,
           backgroundSize,
-          ease,
-        })
-        gsap.to(layout, {
-          duration,
-          backgroundColor: vars.backroundColor,
           ease,
         })
         break
@@ -140,6 +139,7 @@ const { title, pageDescription } = Astro.props
     color: vars.$textColor
 
   .layout
+    background-color: vars.$backgroundColor
     position: absolute
     top: 0
     left: 0
@@ -159,5 +159,5 @@ const { title, pageDescription } = Astro.props
     height: 100vh
     object-fit: cover
     z-index: -1
-    opacity: 0.5
+    // opacity: 0.5
 </style>

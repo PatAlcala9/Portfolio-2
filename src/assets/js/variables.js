@@ -24,7 +24,7 @@ const backgroundSize = 'cover'
 const ease = 'power2.out'
 
 const vars = {
-  backroundColor: backgroundColor,
+  backgroundColor: backgroundColor,
   textColor: textColor,
   borderColor: borderColor,
 

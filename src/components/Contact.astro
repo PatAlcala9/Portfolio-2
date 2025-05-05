@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import proton from '../assets/images/proton.avif'
 import yahoo from '../assets/images/yahoo.avif'
 import gmail from '../assets/images/gmail.avif'
-// import copy from '../assets/images/copy.svg'
+import { mode } from '../stores/mode'
 
 const email = 'patrick_alv@yahoo.com'
 ---
@@ -12,7 +12,10 @@ const email = 'patrick_alv@yahoo.com'
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
   import vars from '../assets/js/variables.js'
-  import programmingCopy from '../assets/images/bx--copy.svg'
+  import proton from '../assets/images/proton.avif'
+  import yahoo from '../assets/images/yahoo.avif'
+  import gmail from '../assets/images/gmail.avif'
+  import protonwhite from '../assets/images/proton-white.avif'
 
   const duration = vars.duration
   const backgroundSize = vars.backgroundSize
@@ -25,7 +28,10 @@ const email = 'patrick_alv@yahoo.com'
   const emailDisplay = document.getElementById('emailDisplay')
   const tabYmail = document.getElementById('tabYmail')
   const tabGmail = document.getElementById('tabGmail')
-  const tabPmail = document.getElementById('tabPmail')
+  const tabPmail = document.getElementById('tabPmail') as HTMLImageElement
+  const tabYmailIcon = document.getElementById('tabYmail_icon')
+  const tabGmailIcon = document.getElementById('tabGmail_icon')
+  const tabPmailIcon = document.getElementById('tabPmail_icon')
   const contactText = document.getElementById('contactText')
   const contactEmail = document.getElementById('contactEmail')
   const contactTabs = document.getElementById('contactTabs')
@@ -240,7 +246,6 @@ const email = 'patrick_alv@yahoo.com'
             backgroundSize,
             ease,
           })
-
           break
         case 'designerMode':
           gsap.to(tabYmail, {
@@ -760,7 +765,6 @@ const email = 'patrick_alv@yahoo.com'
     <section class="contacts__email__row">
       <span class="contacts__email__row__content" id="emailDisplay">{email}</span>
       <div class="contacts__email__row__content__icon" id="copy_button">
-        <!-- <Image id="copy_button_icon" src={copy} alt="Yahoo Mail" quality={'mid'} width={16} /> -->
         <span id="copy_button_icon">Copy</span>
       </div>
     </section>
