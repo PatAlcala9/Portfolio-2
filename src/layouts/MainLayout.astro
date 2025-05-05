@@ -65,7 +65,7 @@ const { title, pageDescription } = Astro.props
         })
         break
       default:
-        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`, ease })
+        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`, backgroundSize: 'cover', ease })
         break
     }
   })
