@@ -28,6 +28,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(body, {
           duration,
           backgroundImage: `url('${programmingA.src}'), url('${programmingW.src}')`,
+          opacity: 0.5,
           backgroundSize,
           ease: vars.ease,
         })
@@ -36,12 +37,12 @@ const { title, pageDescription } = Astro.props
           backgroundColor: vars.modeProgrammerBackgroundColor,
           ease,
         })
-
         break
       case 'designerMode':
         gsap.to(body, {
           duration,
           backgroundImage: `url('${designingA.src}'), url('${designingW.src}')`,
+          opacity: 0.5,
           backgroundSize,
           ease,
         })
@@ -55,6 +56,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(body, {
           duration,
           backgroundImage: `url('${writingA.src}'), url('${writingW.src}')`,
+          opacity: 0.5,
           backgroundSize,
           ease,
         })
@@ -65,7 +67,18 @@ const { title, pageDescription } = Astro.props
         })
         break
       default:
-        gsap.to(body, { duration, backgroundColor: 'none', backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`, backgroundSize: 'cover', ease })
+        gsap.to(body, {
+          duration,
+          backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`,
+          opacity: 0.1,
+          backgroundSize,
+          ease,
+        })
+        gsap.to(layout, {
+          duration,
+          backgroundColor: vars.backroundColor,
+          ease,
+        })
         break
     }
   })
@@ -127,7 +140,6 @@ const { title, pageDescription } = Astro.props
     color: vars.$textColor
 
   .layout
-    background-color: vars.$backgroundColor
     position: absolute
     top: 0
     left: 0

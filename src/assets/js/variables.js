@@ -19,8 +19,6 @@ const modeWriterBackgroundColor = 'rgba(208, 203, 126, 1)';
 const contactBoxBackgroundColor = 'rgba(10, 23, 27, 1)';
 const contactBoxTextColor = 'rgb(244, 244, 244)';
 
-
-
 const duration = 0.4
 const backgroundSize = 'cover'
 const ease = 'power2.out'
