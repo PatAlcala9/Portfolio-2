@@ -6,8 +6,8 @@ const { title, pageDescription } = Astro.props
   import { mode } from '../stores/mode.js'
   import { gsap } from 'gsap'
   import vars from '../assets/js/variables.js'
-  import backgroundA from '../assets/images/backgroundA2.avif'
-  import backgroundW from '../assets/images/backgroundW2.webp'
+  import backgroundA from '../assets/images/backgroundA.avif'
+  import backgroundW from '../assets/images/backgroundW.webp'
   import programmingA from '../assets/images/programmingA.avif'
   import programmingW from '../assets/images/programmingW.webp'
   import designingA from '../assets/images/designingA.avif'
@@ -37,6 +37,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(layout, {
           duration,
           backgroundColor: vars.modeProgrammerBackgroundColor,
+          height: '200vh',
           ease,
         })
 
@@ -52,6 +53,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(layout, {
           duration,
           backgroundColor: vars.modeDesignerBackgroundColor,
+          height: '200vh',
           ease,
         })
         break
@@ -66,6 +68,7 @@ const { title, pageDescription } = Astro.props
         gsap.to(layout, {
           duration,
           backgroundColor: vars.modeWriterBackgroundColor,
+          height: '200vh',
           ease,
         })
         break
@@ -126,14 +129,6 @@ const { title, pageDescription } = Astro.props
     src: url(@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2) format('woff2-variations')
     unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
 
-  @font-face
-    font-family: 'Cormorant Garamond Variable'
-    font-style: normal
-    font-display: swap
-    font-weight: 300 700
-    src: url(@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2) format('woff2-variations')
-    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
-
   .text
     font-family: vars.$fontFamily
     color: vars.$textColor
@@ -150,6 +145,7 @@ const { title, pageDescription } = Astro.props
     overflow: auto
     margin: 0
     object-fit: cover
+    scroll-behavior: smooth
 
   #body
     position: fixed
@@ -159,5 +155,4 @@ const { title, pageDescription } = Astro.props
     height: 100vh
     object-fit: cover
     z-index: -1
-    // opacity: 0.5
 </style>

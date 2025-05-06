@@ -12,15 +12,18 @@ As a Graphic Designer, I leverage design principles and software tools like Adob
 
 Lastly, as a Writer, I weave words into compelling narratives that captivate audiences and convey valuable insights. My writing spans multiple genres, from blog posts and articles to copywriting and content creation.
 
+#
 
-Skills
+## Skills
 
 • Programming Languages: HTML, CSS, JavaScript, TypeScript, C++, Dart, Go, C#, MySQL, PostgreSQL, MongoDB
 • Frameworks & Libraries: VueJS, React, SolidJS, Astro, Flutter, GoGin
-• Tools: Git, Docker, Podman, NGINX
-• Design: Figma, Adobe Illustrator
+• Tools: Git, Docker, Podman, NGINX, Linux
+• Design: Photoshop, GIMP, Inkscape,
 
-Projects
+#
+
+## Projects
 
 1. Personal Finance Tracker
 
@@ -56,7 +59,4 @@ Feel free to reach out if you have any questions or want to discuss potential pr
 • LinkedIn: https://www.linkedin.com/in/yourusername/
 • GitHub: https://github.com/yourusername
 
-Thank you for visiting my portfolio! 🌟
-
-
-
+Thank you for visiting my portfolio!

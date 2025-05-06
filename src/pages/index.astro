@@ -2,9 +2,12 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import Contact from '../components/Contact.astro'
 import Modes from '../components/Modes.astro'
-import Photos from '../components/Photos.astro'
+// import Photos from '../components/Photos.astro'
 import Texts from '../components/Texts.astro'
 import Scroller from '../components/Scroller.astro'
+import Title from '../components/Title.astro'
+
+import { mode } from '../stores/mode'
 
 // const name = 'Patrick Alvin Alcala'
 // const firstname = 'Patrick'
@@ -12,8 +15,20 @@ import Scroller from '../components/Scroller.astro'
 // const lastname = 'Alcala'
 ---
 
+<script>
+  import { mode } from '../stores/mode'
+
+  const page2 = document.getElementById('page2')
+
+  mode.subscribe((value) => {
+    if (value === 'programmerMode' || value === 'designerMode' || value === 'writerMode') {
+      page2.style.display = 'block'
+    }
+  })
+</script>
+
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
-  <div class="page">
+  <div class="page" id="page">
     <section class="texts text">
       <Texts />
     </section>
@@ -27,12 +42,18 @@ import Scroller from '../components/Scroller.astro'
     </section>
 
     <section class="contacts text">
-      <Contact client:load />
+      <Contact />
     </section>
   </div>
 
   <div>
     <Scroller />
+  </div>
+
+  <div class="page2" id="page2" style="display: none;">
+    <section class="right-side">
+      <Title text="Sample" />
+    </section>
   </div>
 </MainLayout>
 
@@ -52,6 +73,14 @@ import Scroller from '../components/Scroller.astro'
       grid-template-rows: auto
       gap: 10px
       grid-template-areas: "texts" "photos" "modes" "contacts"
+
+  .page2
+    display: none
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: auto
+    gap: 10px
+    grid-auto-flow: row
+    grid-template-areas: "right-side"
 
   .texts
     grid-area: texts
