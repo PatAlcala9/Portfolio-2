@@ -1,5 +1,5 @@
 import './Contact.sass'
-import { createSignal, onEffect } from 'solid-js'
+import { createSignal, onMount } from 'solid-js'
 import { mode } from '/src/stores/mode.js'
 import { gsap } from 'gsap'
 import vars from '/src/assets/js/variables.js'
@@ -484,7 +484,7 @@ export default () => {
     }
   }
 
-  onEffect(() => {
+  onMount(() => {
     mode.subscribe((val) => {
       switch (val) {
         case 'programmerMode':

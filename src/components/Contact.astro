@@ -1,9 +1,8 @@
 ---
 import { Image } from 'astro:assets'
-import proton from '../assets/images/proton.avif'
+import protonlight from '../assets/images/protonlight.avif'
 import yahoo from '../assets/images/yahoo.avif'
 import gmail from '../assets/images/gmail.avif'
-import { mode } from '../stores/mode'
 
 const email = 'patrick_alv@yahoo.com'
 ---
@@ -15,7 +14,16 @@ const email = 'patrick_alv@yahoo.com'
   import proton from '../assets/images/proton.avif'
   import yahoo from '../assets/images/yahoo.avif'
   import gmail from '../assets/images/gmail.avif'
-  import protonwhite from '../assets/images/proton-white.avif'
+
+  import protonw from '../assets/images/proton.webp'
+  import yahoow from '../assets/images/yahoo.webp'
+  import gmailw from '../assets/images/gmail.webp'
+  // import yahoolight from '../assets/images/yahoolight.avif'
+  // import yahoolightw from '../assets/images/yahoolight.webp'
+  import gmaillight from '../assets/images/gmaillight.avif'
+  import gmaillightw from '../assets/images/gmaillight.webp'
+  import protonlight from '../assets/images/protonlight.avif'
+  import protonlightw from '../assets/images/protonlight.webp'
 
   const duration = vars.duration
   const backgroundSize = vars.backgroundSize
@@ -28,7 +36,7 @@ const email = 'patrick_alv@yahoo.com'
   const emailDisplay = document.getElementById('emailDisplay')
   const tabYmail = document.getElementById('tabYmail')
   const tabGmail = document.getElementById('tabGmail')
-  const tabPmail = document.getElementById('tabPmail') as HTMLImageElement
+  const tabPmail = document.getElementById('tabPmail')
   const tabYmailIcon = document.getElementById('tabYmail_icon')
   const tabGmailIcon = document.getElementById('tabGmail_icon')
   const tabPmailIcon = document.getElementById('tabPmail_icon')
@@ -37,12 +45,12 @@ const email = 'patrick_alv@yahoo.com'
   const contactTabs = document.getElementById('contactTabs')
   const copyIcon = document.getElementById('copy_button_icon')
 
-  const tabBackgroundColorProgrammer = 'hsl(208, 26.30%, 11.20%)'
-  const tabSelectedBackgroundColorProgrammer = 'hsl(208, 26.30%, 50.20%)'
-  const tabBackgroundColorDesigner = 'rgba(130, 131, 102, 1)'
-  const tabSelectedBackgroundColorDesigner = 'rgba(220, 221, 183, 1)'
-  const tabBackgroundColorWriter = 'rgba(135, 135, 135, 1)'
-  const tabSelectedBackgroundColorWriter = 'rgba(251, 251, 251, 1)'
+  const tabBackgroundColorProgrammer = vars.tabBackgroundColorProgrammer
+  const tabSelectedBackgroundColorProgrammer = vars.tabSelectedBackgroundColorProgrammer
+  const tabBackgroundColorDesigner = vars.tabBackgroundColorDesigner
+  const tabSelectedBackgroundColorDesigner = vars.tabSelectedBackgroundColorDesigner
+  const tabBackgroundColorWriter = vars.tabBackgroundColorWriter
+  const tabSelectedBackgroundColorWriter = vars.tabSelectedBackgroundColorWriter
 
   tabYmail.addEventListener('click', () => {
     emailDisplay.innerText = yemail
@@ -519,7 +527,11 @@ const email = 'patrick_alv@yahoo.com'
             backgroundColor: defaulttabSelectedBackgroundColor,
             ease,
           })
-
+          gsap.to(tabPmailIcon, {
+            duration,
+            content: `url(${proton})`,
+            ease,
+          })
           break
       }
     })
@@ -607,6 +619,21 @@ const email = 'patrick_alv@yahoo.com'
           backgroundSize,
           ease,
         })
+        gsap.to(tabYmailIcon, {
+          duration,
+          content: `url(${yahoo.src})`,
+          ease,
+        })
+        gsap.to(tabGmailIcon, {
+          duration,
+          content: `url(${gmaillight.src})`,
+          ease,
+        })
+        gsap.to(tabPmailIcon, {
+          duration,
+          content: `url(${protonlight.src})`,
+          ease,
+        })
         break
 
       case 'designerMode':
@@ -676,7 +703,21 @@ const email = 'patrick_alv@yahoo.com'
           backgroundSize,
           ease,
         })
-
+        gsap.to(tabYmailIcon, {
+          duration,
+          content: `url(${yahoo.src})`,
+          ease,
+        })
+        gsap.to(tabGmailIcon, {
+          duration,
+          content: `url(${gmail.src})`,
+          ease,
+        })
+        gsap.to(tabPmailIcon, {
+          duration,
+          content: `url(${proton.src})`,
+          ease,
+        })
         break
       case 'writerMode':
         gsap.to(contactText, {
@@ -751,6 +792,21 @@ const email = 'patrick_alv@yahoo.com'
           backgroundSize,
           ease,
         })
+        gsap.to(tabYmailIcon, {
+          duration,
+          content: `url(${yahoo.src})`,
+          ease,
+        })
+        gsap.to(tabGmailIcon, {
+          duration,
+          content: `url(${gmail.src})`,
+          ease,
+        })
+        gsap.to(tabPmailIcon, {
+          duration,
+          content: `url(${proton.src})`,
+          ease,
+        })
         break
       default:
         break
@@ -778,7 +834,7 @@ const email = 'patrick_alv@yahoo.com'
       <Image src={gmail} alt="Google Mail" quality={'mid'} width={70} />
     </div>
     <div class="contacts__tab" id="tabPmail">
-      <Image src={proton} alt="Proton Mail" quality={'mid'} width={90} />
+      <Image id="tabPmail_icon" src={protonlight} alt="Proton Mail" quality={'mid'} width={90} />
     </div>
   </div>
 </section>
