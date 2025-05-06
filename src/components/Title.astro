@@ -2,11 +2,35 @@
 const { text } = Astro.props
 ---
 
+<script>
+  import { mode } from '../stores/mode'
+  import vars from '../assets/js/variables.js'
+
+  const title = document.getElementById('title')
+
+  mode.subscribe((value) => {
+    if (value === 'programmerMode') {
+      title.style.color = vars.modeProgrammerTextColor
+      title.style.fontFamily = vars.modeProgrammerFontFamily
+    } else if (value === 'designerMode') {
+      title.style.color = vars.modeDesignerTextColor
+      title.style.fontFamily = vars.modeDesignerFontFamily
+    } else if (value === 'writerMode') {
+      title.style.color = vars.modeWriterTextColor
+      title.style.fontFamily = vars.modeWriterFontFamily
+    }
+  })
+</script>
+
 <section>
-  <span class="title">{text}</span>
+  <span class="title" id="title">{text}</span>
 </section>
 
 <style lang="sass">
+  @use '/src/assets/css/variables.sass' as vars
+
   .title
+    padding: 2rem
     font-size: 3rem
+    font-weight: bold
 </style>
