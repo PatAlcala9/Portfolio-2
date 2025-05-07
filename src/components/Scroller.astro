@@ -4,7 +4,7 @@
 
 <script>
   import { mode } from '../stores/mode.js'
-  import { gsap } from 'gsap'
+  // import { gsap } from 'gsap'
   import vars from '../assets/js/variables.js'
 
   const scroller = document.getElementById('scrollerContent')
@@ -17,42 +17,18 @@
   mode.subscribe((val) => {
     switch (val) {
       case 'programmerMode':
-        // gsap.to(scroller, {
-        //   duration,
-        //   color: vars.modeProgrammerTextColor,
-        //   fontFamily: vars.modeProgrammerFontFamily,
-        //   fontSize: '1.25rem',
-        //   innerText: 'Scroll Down to Explore',
-        //   ease,
-        // })
         scroller.style.color = vars.modeProgrammerTextColor
         scroller.style.fontFamily = vars.modeProgrammerFontFamily
         scroller.style.fontSize = '1.25rem'
         scroller.innerText = innerText
         break
       case 'designerMode':
-        // gsap.to(scroller, {
-        //   duration,
-        //   color: vars.modeDesignerTextColor,
-        //   fontFamily: vars.modeDesignerFontFamily,
-        //   fontSize: '1.25rem',
-        //   innerText: 'Scroll Down to Explore',
-        //   ease,
-        // })
         scroller.style.color = vars.modeDesignerTextColor
         scroller.style.fontFamily = vars.modeDesignerFontFamily
         scroller.style.fontSize = '1.25rem'
         scroller.innerText = innerText
         break
       case 'writerMode':
-        // gsap.to(scroller, {
-        //   duration,
-        //   color: vars.modeWriterTextColor,
-        //   fontFamily: vars.modeWriterFontFamily,
-        //   fontSize: '1.25rem',
-        //   innerText: 'Scroll Down to Explore',
-        //   ease,
-        // })
         scroller.style.color = vars.modeWriterTextColor
         scroller.style.fontFamily = vars.modeWriterFontFamily
         scroller.style.fontSize = '1.25rem'

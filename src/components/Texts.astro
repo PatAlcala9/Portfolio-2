@@ -26,21 +26,27 @@
   const modeWriterFontFamily = vars.modeWriterFontFamily
 
   mode.subscribe((value) => {
-    if (value === 'programmerMode') {
-      gsap.to(dev, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
-      gsap.to(design, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(write, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(texts, { duration, color: modeProgrammerTextColor, fontFamily: modeProgrammerFontFamily, ease })
-    } else if (value === 'designerMode') {
-      gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(design, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
-      gsap.to(write, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(texts, { duration, color: modeDesignerTextColor, fontFamily: modeDesignerFontFamily, ease })
-    } else if (value === 'writerMode') {
-      gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(design, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
-      gsap.to(write, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
-      gsap.to(texts, { duration, color: modeWriterTextColor, fontFamily: modeWriterFontFamily, fontWeight: '700', ease })
+    switch (value) {
+      case 'programmerMode':
+        gsap.to(dev, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
+        gsap.to(design, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(write, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(texts, { duration, color: modeProgrammerTextColor, fontFamily: modeProgrammerFontFamily, ease })
+        break
+      case 'designerMode':
+        gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(design, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
+        gsap.to(write, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(texts, { duration, color: modeDesignerTextColor, fontFamily: modeDesignerFontFamily, ease })
+        break
+      case 'writerMode':
+        gsap.to(dev, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(design, { duration, fontSize: inactiveSize, fontWeight: 'normal', ease })
+        gsap.to(write, { duration, fontSize: activeSize, fontWeight: 'bold', ease })
+        gsap.to(texts, { duration, color: modeWriterTextColor, fontFamily: modeWriterFontFamily, ease })
+        break
+      default:
+        break
     }
   })
 
@@ -67,9 +73,9 @@
     <span class="positions__write" id="positions__write">Writer</span>
   </div>
 
-  <div class="base">
+  <!-- <div class="base">
     <span>Based on Philippines</span>
-  </div>
+  </div> -->
 </section>
 
 <style lang="sass">
@@ -105,8 +111,8 @@
     font-weight: normal
     cursor: pointer
 
-  .base
-    margin: 3rem 0 0 0
-    font-size: 1.25rem
-    font-weight: 100
+  // .base
+  //   margin: 3rem 0 0 0
+  //   font-size: 1.25rem
+  //   font-weight: 100
 </style>
