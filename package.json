@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/fira-code": "^5.2.5",
+    "@fontsource-variable/fira-code": "^5.2.6",
     "@fontsource-variable/geologica": "^5.2.5",
     "@fontsource-variable/montserrat": "^5.2.5",
     "@fontsource-variable/playfair-display": "^5.2.5",
-    "astro": "^5.7.10",
+    "astro": "^5.7.11",
     "astro-icon": "^1.1.5",
     "gsap": "^3.13.0",
     "nanostores": "^0.11.4",

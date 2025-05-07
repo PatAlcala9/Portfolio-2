@@ -6,6 +6,7 @@ import Modes from '../components/Modes.astro'
 import Texts from '../components/Texts.astro'
 import Scroller from '../components/Scroller.astro'
 import Title from '../components/Title.astro'
+import Description from '../components/Description.astro'
 
 // const name = 'Patrick Alvin Alcala'
 // const firstname = 'Patrick'
@@ -20,7 +21,7 @@ import Title from '../components/Title.astro'
 
   mode.subscribe((value) => {
     if (value === 'programmerMode' || value === 'designerMode' || value === 'writerMode') {
-      page2.style.display = 'block'
+      page2.style.display = 'grid'
     }
   })
 </script>
@@ -49,8 +50,12 @@ import Title from '../components/Title.astro'
   </div>
 
   <div class="page2" id="page2" style="display: none;">
+    <section class="left-side">
+      <Title text="About Me" />
+    </section>
+
     <section class="right-side">
-      <Title text="Sample" />
+      <Description text="I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security." />
     </section>
   </div>
 </MainLayout>
@@ -72,33 +77,48 @@ import Title from '../components/Title.astro'
       gap: 10px
       grid-template-areas: "texts" "photos" "modes" "contacts"
 
+    .texts
+      grid-area: texts
+
+    .photos
+      grid-area: photos
+
+    .modes
+      grid-area: modes
+      overflow: hidden
+      padding: 2rem
+
+    .contacts
+      grid-area: contacts
+      justify-self: end
+      align-self: center
+      padding: 0 2rem 0 0
+
+    .container
+      position: relative
+      width: 100%
+      height: 100%
+
   .page2
-    display: none
-    grid-template-columns: repeat(2, 1fr)
-    grid-template-rows: auto
+    display: grid
+    grid-template-columns: 0.8fr 1.2fr
+    grid-template-rows: 1fr
     gap: 10px
     grid-auto-flow: row
-    grid-template-areas: "right-side"
+    justify-items: stretch
+    align-items: stretch
+    grid-template-areas: "left-side right-side"
+    height: 80vh
 
-  .texts
-    grid-area: texts
+  .left-side
+    justify-self: center
+    align-self: start
+    grid-area: left-side
+    padding: 6rem 2rem 0 2rem
 
-  .photos
-    grid-area: photos
-
-  .modes
-    grid-area: modes
-    overflow: hidden
-    padding: 2rem
-
-  .contacts
-    grid-area: contacts
-    justify-self: end
+  .right-side
+    justify-self: center
     align-self: center
-    padding: 0 2rem 0 0
-
-  .container
-    position: relative
-    width: 100%
-    height: 100%
+    grid-area: right-side
+    padding: 0 6rem 0 0
 </style>

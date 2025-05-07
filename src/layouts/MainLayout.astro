@@ -18,69 +18,47 @@ const { title, pageDescription } = Astro.props
   const body = document.getElementById('body')
   const layout = document.getElementById('layout')
 
-  const duration = vars.duration
   const backgroundSize = vars.backgroundSize
   const ease = vars.ease
   const opacityDefault = 0.2
   const opacityModed = 0.5
 
+  const addBottomPage = () => {
+    gsap.to(layout, {
+      duration: 1,
+      height: 'auto',
+      ease,
+    })
+  }
+
   mode.subscribe((val) => {
     switch (val) {
       case 'programmerMode':
-        gsap.to(body, {
-          duration,
-          backgroundImage: `url('${programmingA.src}'), url('${programmingW.src}')`,
-          opacity: opacityModed,
-          backgroundSize,
-          ease: vars.ease,
-        })
-        gsap.to(layout, {
-          duration,
-          backgroundColor: vars.modeProgrammerBackgroundColor,
-          height: '200vh',
-          ease,
-        })
-
+        body.style.backgroundImage = `url('${programmingA.src}'), url('${programmingW.src}')`
+        body.style.opacity = opacityModed.toString()
+        body.style.backgroundSize = backgroundSize
+        layout.style.backgroundColor = vars.modeProgrammerBackgroundColor
+        addBottomPage()
         break
       case 'designerMode':
-        gsap.to(body, {
-          duration,
-          backgroundImage: `url('${designingA.src}'), url('${designingW.src}')`,
-          opacity: opacityModed,
-          backgroundSize,
-          ease,
-        })
-        gsap.to(layout, {
-          duration,
-          backgroundColor: vars.modeDesignerBackgroundColor,
-          height: '200vh',
-          ease,
-        })
+        body.style.backgroundImage = `url('${designingA.src}'), url('${designingW.src}')`
+        body.style.opacity = opacityModed.toString()
+        body.style.backgroundSize = backgroundSize
+        layout.style.backgroundColor = vars.modeDesignerBackgroundColor
+        addBottomPage()
         break
       case 'writerMode':
-        gsap.to(body, {
-          duration,
-          backgroundImage: `url('${writingA.src}'), url('${writingW.src}')`,
-          opacity: opacityModed,
-          backgroundSize,
-          ease,
-        })
-        gsap.to(layout, {
-          duration,
-          backgroundColor: vars.modeWriterBackgroundColor,
-          height: '200vh',
-          ease,
-        })
+        body.style.backgroundImage = `url('${writingA.src}'), url('${writingW.src}')`
+        body.style.opacity = opacityModed.toString()
+        body.style.backgroundSize = backgroundSize
+        layout.style.backgroundColor = vars.modeWriterBackgroundColor
+        addBottomPage()
         break
       default:
-        gsap.to(body, {
-          duration,
-          backgroundColor: 'none',
-          backgroundImage: `url('${backgroundA.src}'), url('${backgroundW.src}')`,
-          opacity: opacityDefault,
-          backgroundSize,
-          ease,
-        })
+        body.style.backgroundColor = 'none'
+        body.style.backgroundImage = `url('${backgroundA.src}'), url('${backgroundW.src}')`
+        body.style.opacity = opacityDefault.toString()
+        body.style.backgroundSize = backgroundSize
         break
     }
   })

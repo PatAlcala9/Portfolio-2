@@ -43,6 +43,18 @@
       gsap.to(texts, { duration, color: modeWriterTextColor, fontFamily: modeWriterFontFamily, fontWeight: '700', ease })
     }
   })
+
+  dev.addEventListener('click', () => {
+    mode.set('programmerMode')
+  })
+
+  design.addEventListener('click', () => {
+    mode.set('designerMode')
+  })
+
+  write.addEventListener('click', () => {
+    mode.set('writerMode')
+  })
 </script>
 
 <section class="texts" id="texts">
@@ -91,6 +103,7 @@
     align-items: flex-start
     align-content: flex-start
     font-weight: normal
+    cursor: pointer
 
   .base
     margin: 3rem 0 0 0
