@@ -16,47 +16,27 @@ Lastly, as a Writer, I weave words into compelling narratives that captivate aud
 
 ## Skills
 
-• Programming Languages: HTML, CSS, JavaScript, TypeScript, C++, Dart, Go, C#, MySQL, PostgreSQL, MongoDB
-• Frameworks & Libraries: VueJS, React, SolidJS, Astro, Flutter, GoGin
-• Tools: Git, Docker, Podman, NGINX, Linux
-• Design: Photoshop, GIMP, Inkscape,
+- Programming Languages: HTML, CSS, JavaScript, TypeScript, C++, Dart, Go, C#, MySQL, PostgreSQL, MongoDB
+- Frameworks & Libraries: VueJS, React, SolidJS, Astro, Flutter, GoGin
+- Tools: Git, Docker, Podman, NGINX, Linux
+- Design: Photoshop, GIMP, Inkscape,
 
 #
 
-## Projects
-
-1. Personal Finance Tracker
-
-Description: A web application that tracks income and expenses using React for the frontend and Django REST framework for the backend.
-
-Technologies: React, Django, PostgreSQL, AWS S3
-https://github.com/yourusername/personal-finance-tracker
-
-2. Image Recognition App
-
-Description: An image recognition app built with TensorFlow that can identify various objects in images.
-
-Technologies: TensorFlow, Flask, HTML/CSS/JavaScript
-https://github.com/yourusername/image-recognition-app
-
-3. Data Visualization Dashboard
-
-Description: A dashboard created using Tableau to visualize sales data from a retail company.
-
-Technologies: Tableau, SQL, Excel
-https://public.tableau.com/shared/YOUR_TABLEAU_LINK
+<!-- PROJECTS -->
 
 Education
 
-• Bachelor of Science in Computer Science, University of XYZ, 2018 - 2022
-• Certified Data Scientist, Coursera, 2021
+> Bachelor of Science in Computer Engineering, University of Immaculate Conception
 
 Contact
 
 Feel free to reach out if you have any questions or want to discuss potential projects!
 
-• Email: your.email@example.com
-• LinkedIn: https://www.linkedin.com/in/yourusername/
-• GitHub: https://github.com/yourusername
+- Yahoo Mail: patrick_alv@yahoo.com
+- Google Mail: pat.alcala9@gmail.com
+- Proton Mail: pat.alcala9@proton.me
+• LinkedIn: https://www.linkedin.com/in/patrick-alvin-alcala-8b0b941b9/
+• GitHub: https://github.com/PatAlcala9
 
 Thank you for visiting my portfolio!
