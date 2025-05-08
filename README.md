@@ -36,7 +36,7 @@ Feel free to reach out if you have any questions or want to discuss potential pr
 - Yahoo Mail: patrick_alv@yahoo.com
 - Google Mail: pat.alcala9@gmail.com
 - Proton Mail: pat.alcala9@proton.me
-• LinkedIn: https://www.linkedin.com/in/patrick-alvin-alcala-8b0b941b9/
-• GitHub: https://github.com/PatAlcala9
+- LinkedIn: https://www.linkedin.com/in/patrick-alvin-alcala-8b0b941b9/
+- GitHub: https://github.com/PatAlcala9
 
 Thank you for visiting my portfolio!
