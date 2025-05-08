@@ -9,15 +9,19 @@ const { text } = Astro.props
   const title = document.getElementById('title')
 
   mode.subscribe((value) => {
-    if (value === 'programmerMode') {
-      title.style.color = vars.modeProgrammerTextColor
-      title.style.fontFamily = vars.modeProgrammerFontFamily
-    } else if (value === 'designerMode') {
-      title.style.color = vars.modeDesignerTextColor
-      title.style.fontFamily = vars.modeDesignerFontFamily
-    } else if (value === 'writerMode') {
-      title.style.color = vars.modeWriterTextColor
-      title.style.fontFamily = vars.modeWriterFontFamily
+    switch (value) {
+      case 'programmerMode':
+        title.style.color = vars.modeProgrammerTextColor
+        title.style.fontFamily = vars.modeProgrammerFontFamily
+        break
+      case 'designerMode':
+        title.style.color = vars.modeDesignerTextColor
+        title.style.fontFamily = vars.modeDesignerFontFamily
+        break
+      case 'writerMode':
+        title.style.color = vars.modeWriterTextColor
+        title.style.fontFamily = vars.modeWriterFontFamily
+        break
     }
   })
 </script>

@@ -9,27 +9,31 @@ const { text } = Astro.props
   const description = document.getElementById('description')
 
   mode.subscribe((value) => {
-    if (value === 'programmerMode') {
-      description.style.color = vars.modeProgrammerTextColor
-      description.style.fontFamily = vars.modeProgrammerFontFamily
-      description.style.fontWeight = '500'
-      description.style.border = `1px solid ${vars.modeProgrammerTextColor}`
-      description.style.padding = '0.5rem'
-      description.style.borderRadius = '0.5rem'
-      description.style.backgroundColor = vars.modeProgrammerBackgroundColor
-      description.innerText = 'I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security.'
-    } else if (value === 'designerMode') {
-      description.style.color = vars.modeDesignerTextColor
-      description.style.fontFamily = vars.modeDesignerFontFamily
-      description.style.fontWeight = '500'
-      description.style.border = 'none'
-      description.style.padding = '0'
-      description.style.borderRadius = '0'
-      description.style.backgroundColor = 'transparent'
-      description.innerText = 'I also writes articles and stories online, and as a tech enthusiast, I enjoy learning and exploring new technologies as a hobby.'
-    } else if (value === 'writerMode') {
-      description.style.color = vars.modeWriterTextColor
-      description.style.fontFamily = vars.modeWriterFontFamily
+    switch (value) {
+      case 'programmerMode':
+        description.style.color = vars.modeProgrammerTextColor;
+        description.style.fontFamily = vars.modeProgrammerFontFamily;
+        description.style.fontWeight = '500';
+        description.style.border = `1px solid ${vars.modeProgrammerTextColor}`;
+        description.style.padding = '0.5rem';
+        description.style.borderRadius = '0.5rem';
+        description.style.backgroundColor = vars.modeProgrammerBackgroundColor;
+        description.innerText = 'I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security.';
+        break;
+      case 'designerMode':
+        description.style.color = vars.modeDesignerTextColor;
+        description.style.fontFamily = vars.modeDesignerFontFamily;
+        description.style.fontWeight = '500';
+        description.style.border = 'none';
+        description.style.padding = '0';
+        description.style.borderRadius = '0';
+        description.style.backgroundColor = 'transparent';
+        description.innerText = 'I also writes articles and stories online, and as a tech enthusiast, I enjoy learning and exploring new technologies as a hobby.';
+        break;
+      case 'writerMode':
+        description.style.color = vars.modeWriterTextColor;
+        description.style.fontFamily = vars.modeWriterFontFamily;
+        break;
     }
   })
 </script>
