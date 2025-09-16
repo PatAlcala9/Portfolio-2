@@ -1,0 +1,25 @@
+@use '/src/styles/variables.sass' as vars
+@use '/src/styles/fonts.sass' as fonts
+
+.body
+  color: vars.$textColor
+
+.inter
+  @extend .body
+  font-family: fonts.$Inter
+
+.roboto
+  @extend .body
+  font-family: fonts.$Roboto
+
+.montserrat
+  @extend .body
+  font-family: fonts.$Montserrat
+
+.open-sans
+  @extend .body
+  font-family: fonts.$OpenSans
+
+.public-sans
+  @extend .body
+  font-family: fonts.$PublicSans
