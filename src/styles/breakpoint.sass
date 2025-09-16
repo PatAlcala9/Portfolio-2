@@ -1,0 +1,51 @@
+$mobile: 375px
+$tablet: 768px
+$desktop: 1440px
+
+.on-desktop-only
+  @media only screen and (min-width: 0px) and (max-width: $desktop)
+    display: none
+
+  @media only screen and (min-width: $desktop)
+    display: block
+
+.on-tablet-only
+  @media only screen and (min-width: 0px) and (max-width: $tablet)
+    display: none
+
+  @media only screen and (min-width: $tablet) and (max-width: $desktop)
+    display: block
+
+  @media only screen and (min-width: $desktop)
+    display: none
+
+.on-mobile-only
+  @media only screen and (min-width: $mobile)
+    display: block
+
+  @media only screen and (min-width: $tablet)
+    display: none
+
+.on-desktop-tablet-only
+  @media only screen and (min-width: 0px) and (max-width: $tablet)
+    display: none
+
+  @media only screen and (min-width: $tablet)
+    display: block
+
+.on-desktop-mobile-only
+  @media only screen and (min-width: 0px) and (max-width: $mobile)
+    display: block
+
+  @media only screen and (min-width: $mobile) and (max-width: $desktop)
+    display: none
+
+  @media only screen and (min-width: $desktop)
+    display: block
+
+.on-tablet-mobile-only
+  @media only screen and (min-width: 0px) and (max-width: $desktop)
+    display: block
+
+  @media only screen and (min-width: $desktop)
+    display: none
