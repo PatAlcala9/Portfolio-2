@@ -1,6 +1,6 @@
 services:
   portfolio:
-    container_name: portfolio2
+    container_name: portfolio
     restart: unless-stopped
     build:
       context: .
