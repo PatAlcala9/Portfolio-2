@@ -7,6 +7,7 @@ import Texts from '../components/Texts.astro'
 import Scroller from '../components/Scroller.astro'
 import Title from '../components/Title.astro'
 import About from '../components/About.astro'
+import { Row, Column } from '../../fwt'
 ---
 
 <script>
@@ -22,38 +23,69 @@ import About from '../components/About.astro'
 </script>
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
-  <div class="page" id="page">
+  <main>
+    <Row content="left">
+      <section class="texts text">
+        <Texts />
+      </section>
+    </Row>
+
+    <Row content="spaced">
+      <section class="modes text">
+        <Modes />
+      </section>
+
+      <section class="contacts text">
+        <Contact />
+      </section>
+    </Row>
+
+    <div>
+      <Scroller />
+    </div>
+
+    <div class="page2" id="page2" style="display: none;">
+      <section class="left-side">
+        <Title text="About Me" />
+      </section>
+
+      <section class="right-side">
+        <About text="I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security." />
+      </section>
+    </div>
+  </main>
+</MainLayout>
+<!-- <div class="page" id="page">
     <section class="texts text">
       <Texts />
     </section>
 
     <section class="photos text" id="photos">
       <!-- <Photos /> -->
-    </section>
+<!-- </section> -->
 
-    <section class="modes text">
-      <Modes />
-    </section>
+<!-- <section class="modes text">
+  <Modes />
+</section>
 
-    <section class="contacts text">
-      <Contact />
-    </section>
-  </div>
+<section class="contacts text">
+  <Contact />
+</section>
+-->
 
-  <div>
-    <Scroller />
-  </div>
+<!-- <div>
+  <Scroller />
+</div> -->
 
-  <div class="page2" id="page2" style="display: none;">
-    <section class="left-side">
-      <Title text="About Me" />
-    </section>
+<!-- <div class="page2" id="page2" style="display: none;">
+  <section class="left-side">
+    <Title text="About Me" />
+  </section>
 
-    <section class="right-side">
-      <About text="I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security." />
-    </section>
-  </div>
-</MainLayout>
+  <section class="right-side">
+    <About text="I create web applications in both frontend and backend, along with UI/UX design that focuses on performance and security." />
+  </section>
+</div> --> -->
 
 <style lang="sass">
   @use '/src/assets/css/variables.sass' as vars
