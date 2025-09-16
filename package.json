@@ -19,6 +19,6 @@
     "solid-js": "^1.9.9"
   },
   "devDependencies": {
-    "sass-embedded": "^1.89.2"
+    "sass-embedded": "^1.92.1"
   }
 }
