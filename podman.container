@@ -1,0 +1,13 @@
+[Unit]
+Description=Portfolio
+
+[Container]
+ContainerName=portfolio
+Image=localhost/portfolio_portfolio
+PublishPort=8081:8080
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
