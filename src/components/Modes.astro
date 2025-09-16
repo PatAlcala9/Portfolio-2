@@ -1,5 +1,11 @@
 ---
-
+import { OptimizeImage, Image, Box, Row } from '../../fwt'
+import programmerAvif from '../../fwt/images/programmer.avif'
+import programmerWebp from '../../fwt/images/programmer.webp'
+import designerAvif from '../../fwt/images/designer.avif'
+import designerWebp from '../../fwt/images/designer.webp'
+import writerAvif from '../../fwt/images/writer.avif'
+import writerWebp from '../../fwt/images/writer.webp'
 ---
 
 <script>
@@ -23,7 +29,7 @@
   })
 
   const duration = 0.4
-  const backgroundSize = 'cover'
+  // const backgroundSize = 'cover'
   const ease = 'power2.out'
 
   mode.subscribe((val) => {
@@ -33,6 +39,7 @@
           duration,
           border: vars.modeProgrammerBoxBorder,
           borderRadius: '50px',
+          padding: '0',
           y: 0,
           ease,
         })
@@ -40,6 +47,7 @@
           duration,
           border: vars.modeProgrammerBoxBorder,
           borderRadius: '50px',
+          padding: '0',
           y: 0,
           ease,
         })
@@ -47,6 +55,7 @@
           duration,
           border: vars.modeProgrammerBoxBorder,
           borderRadius: '50px',
+          padding: '0',
           y: 0,
           ease,
         })
@@ -55,6 +64,7 @@
           gsap.to(programmer, {
             duration,
             border: vars.modeProgrammerBoxBorderGlow,
+            scale: '1',
             ease,
           })
         })
@@ -63,6 +73,7 @@
           gsap.to(programmer, {
             duration,
             border: vars.modeProgrammerBoxBorder,
+            scale: '1',
             ease,
           })
         })
@@ -71,6 +82,7 @@
           gsap.to(designer, {
             duration,
             border: vars.modeProgrammerBoxBorderGlow,
+            scale: '1',
             ease,
           })
         })
@@ -79,6 +91,7 @@
           gsap.to(designer, {
             duration,
             border: vars.modeProgrammerBoxBorder,
+            scale: '1',
             ease,
           })
         })
@@ -87,6 +100,7 @@
           gsap.to(writer, {
             duration,
             border: vars.modeProgrammerBoxBorderGlow,
+            scale: '1',
             ease,
           })
         })
@@ -95,6 +109,7 @@
           gsap.to(writer, {
             duration,
             border: vars.modeProgrammerBoxBorder,
+            scale: '1',
             ease,
           })
         })
@@ -102,29 +117,33 @@
       case 'designerMode':
         gsap.to(programmer, {
           duration,
-          border: '1px solid rgba(32, 42, 50, 0.5)',
+          border: vars.modeDesignerBoxBorder,
           borderRadius: '200px',
+          padding: '8px',
           y: 30,
           ease,
         })
         gsap.to(designer, {
           duration,
-          border: '1px solid rgba(32, 42, 50, 0.5)',
+          border: vars.modeDesignerBoxBorder,
           borderRadius: '150px',
+          padding: '8px',
           y: -30,
           ease,
         })
         gsap.to(writer, {
           duration,
-          border: '1px solid rgba(32, 42, 50, 0.5)',
+          border: vars.modeDesignerBoxBorder,
           borderRadius: '150px',
+          padding: '8px',
           y: 30,
           ease,
         })
         programmer.addEventListener('mouseenter', () => {
           gsap.to(programmer, {
             duration,
-            border: '1px solid red',
+            border: vars.modeDesignerBoxBorderGlow,
+            scale: '1',
             ease,
           })
         })
@@ -132,7 +151,44 @@
         programmer.addEventListener('mouseleave', () => {
           gsap.to(programmer, {
             duration,
-            border: '1px solid rgba(32, 42, 50, 0.5)',
+            border: vars.modeDesignerBoxBorder,
+            scale: '1',
+            ease,
+          })
+        })
+
+        designer.addEventListener('mouseenter', () => {
+          gsap.to(designer, {
+            duration,
+            border: vars.modeDesignerBoxBorderGlow,
+            scale: '1',
+            ease,
+          })
+        })
+
+        designer.addEventListener('mouseleave', () => {
+          gsap.to(designer, {
+            duration,
+            border: vars.modeDesignerBoxBorder,
+            scale: '1',
+            ease,
+          })
+        })
+
+        writer.addEventListener('mouseenter', () => {
+          gsap.to(writer, {
+            duration,
+            border: vars.modeDesignerBoxBorderGlow,
+            scale: '1',
+            ease,
+          })
+        })
+
+        writer.addEventListener('mouseleave', () => {
+          gsap.to(writer, {
+            duration,
+            border: vars.modeDesignerBoxBorder,
+            scale: '1',
             ease,
           })
         })
@@ -140,24 +196,81 @@
       case 'writerMode':
         gsap.to(programmer, {
           duration,
-          border: 'none',
+          border: '0',
           borderRadius: '0',
+          padding: '0',
           y: 0,
           ease,
         })
         gsap.to(designer, {
           duration,
-          border: 'none',
+          border: '0',
           borderRadius: '0',
+          padding: '0',
           y: 0,
           ease,
         })
         gsap.to(writer, {
           duration,
-          border: 'none',
+          border: '0',
           borderRadius: '0',
+          padding: '0',
           y: 0,
           ease,
+        })
+
+        programmer.addEventListener('mouseenter', () => {
+          gsap.to(programmer, {
+            duration,
+            border: '0',
+            scale: '1.05',
+            ease,
+          })
+        })
+
+        programmer.addEventListener('mouseleave', () => {
+          gsap.to(programmer, {
+            duration,
+            border: '0',
+            scale: '1',
+            ease,
+          })
+        })
+
+        designer.addEventListener('mouseenter', () => {
+          gsap.to(designer, {
+            duration,
+            border: '0',
+            scale: '1.05',
+            ease,
+          })
+        })
+
+        designer.addEventListener('mouseleave', () => {
+          gsap.to(designer, {
+            duration,
+            border: '0',
+            scale: '1',
+            ease,
+          })
+        })
+
+        writer.addEventListener('mouseenter', () => {
+          gsap.to(writer, {
+            duration,
+            border: '0',
+            scale: '1.05',
+            ease,
+          })
+        })
+
+        writer.addEventListener('mouseleave', () => {
+          gsap.to(writer, {
+            duration,
+            border: '0',
+            scale: '1',
+            ease,
+          })
         })
         break
       default:
@@ -166,10 +279,30 @@
   })
 </script>
 
-<section class="container">
-  <div class="box" id="programmer">Programmer Mode</div>
-  <div class="box" id="designer">Designer Mode</div>
-  <div class="box" id="writer">Writer Mode</div>
+<section>
+  <Row gap={1.25}>
+    <!-- <OptimizeImage src="designer.png" size={250} /> -->
+    <picture>
+      <source srcset={programmerAvif.src} type="image/avif" />
+      <source srcset={programmerWebp.src} type="image/webp" />
+      <img id="programmer" style="border-radius: 0; cursor: pointer; flex: 1; border: 1px solid rgba(255,255,255,0.2)" width={250} height="auto" decoding="async" loading="lazy" alt="programmer mode" />
+    </picture>
+
+    <picture>
+      <source srcset={designerAvif.src} type="image/avif" />
+      <source srcset={designerWebp.src} type="image/webp" />
+      <img id="designer" style="border-radius: 0; cursor: pointer; flex: 1; border: 1px solid rgba(255,255,255,0.2)" width={250} height="auto" decoding="async" loading="lazy" alt="designer mode" />
+    </picture>
+
+    <picture>
+      <source srcset={writerAvif.src} type="image/avif" />
+      <source srcset={writerWebp.src} type="image/webp" />
+      <img id="writer" style="border-radius: 0; cursor: pointer; flex: 1; border: 1px solid rgba(255,255,255,0.2)" width={250} height="auto" decoding="async" loading="lazy" alt="writer mode" />
+    </picture>
+
+    <!-- <div class="box" id="designer">Designer Mode</div> -->
+    <!-- <div class="box" id="writer">Writer Mode</div> -->
+  </Row>
 </section>
 
 <style lang="sass">
@@ -190,8 +323,10 @@
     // height: 100%
     flex: 1
     padding: 16px 0 0 0
+    height: 9rem
+    width: 16rem
     background-color: #626d8c
     text-align: center
-    border: 1px solid white
+    border: 1px solid rgba(255,255,255,0.2)
     cursor: pointer
 </style>
