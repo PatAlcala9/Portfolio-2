@@ -1,5 +1,5 @@
 ---
-import { OptimizeImage, Image, Box, Row } from '../../fwt'
+import { Row } from '../../fwt'
 import programmerAvif from '../../fwt/images/programmer.avif'
 import programmerWebp from '../../fwt/images/programmer.webp'
 import designerAvif from '../../fwt/images/designer.avif'
@@ -29,7 +29,6 @@ import writerWebp from '../../fwt/images/writer.webp'
   })
 
   const duration = 0.4
-  // const backgroundSize = 'cover'
   const ease = 'power2.out'
 
   mode.subscribe((val) => {
@@ -281,7 +280,6 @@ import writerWebp from '../../fwt/images/writer.webp'
 
 <section>
   <Row gap={1.25}>
-    <!-- <OptimizeImage src="designer.png" size={250} /> -->
     <picture>
       <source srcset={programmerAvif.src} type="image/avif" />
       <source srcset={programmerWebp.src} type="image/webp" />
@@ -299,9 +297,6 @@ import writerWebp from '../../fwt/images/writer.webp'
       <source srcset={writerWebp.src} type="image/webp" />
       <img id="writer" style="border-radius: 0; cursor: pointer; flex: 1; border: 1px solid rgba(255,255,255,0.2)" width={250} height="auto" decoding="async" loading="lazy" alt="writer mode" />
     </picture>
-
-    <!-- <div class="box" id="designer">Designer Mode</div> -->
-    <!-- <div class="box" id="writer">Writer Mode</div> -->
   </Row>
 </section>
 
