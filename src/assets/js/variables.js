@@ -13,6 +13,8 @@ const modeDesignerTextColor = 'rgba(220, 221, 183, 1)'
 const modeDesignerBoxBorder = '3px solid rgba(121, 122, 61, 0.8)'
 const modeDesignerBoxBorderGlow = '3px solid rgba(218, 219, 129, 0.8)'
 const modeWriterTextColor = 'rgba(0, 0, 0, 1)'
+const modeWriterBoxBorder = '3px solid rgba(255, 255, 255, 0.04)'
+const modeWriterBoxBorderGlow = '3px solid rgba(255, 255, 255, 0.34)'
 
 const modeProgrammerBackgroundColor = 'rgba(21, 29, 36, 1)'
 const modeDesignerBackgroundColor = 'rgba(19, 29, 29, 1)'
@@ -48,6 +50,8 @@ const vars = {
   modeDesignerBoxBorder: modeDesignerBoxBorder,
   modeDesignerBoxBorderGlow: modeDesignerBoxBorderGlow,
   modeWriterTextColor: modeWriterTextColor,
+  modeWriterBoxBorder: modeWriterBoxBorder,
+  modeWriterBoxBorderGlow: modeWriterBoxBorderGlow,
 
   modeProgrammerBackgroundColor: modeProgrammerBackgroundColor,
   modeDesignerBackgroundColor: modeDesignerBackgroundColor,
