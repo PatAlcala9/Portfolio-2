@@ -7,7 +7,7 @@ import Texts from '../components/Texts.astro'
 import Scroller from '../components/Scroller.astro'
 import Title from '../components/Title.astro'
 import About from '../components/About.astro'
-import { Row, Column } from '../../fwt'
+import { Row, Column, Display } from '../../fwt'
 ---
 
 <script>
@@ -24,11 +24,21 @@ import { Row, Column } from '../../fwt'
 
 <MainLayout title="Pat Alcala" pageDescription="Portfolio">
   <main>
-    <Row content="left">
-      <section class="texts text">
-        <Texts />
-      </section>
-    </Row>
+    <Display desktop tablet>
+      <Row content="left">
+        <section class="texts text">
+          <Texts />
+        </section>
+      </Row>
+    </Display>
+
+    <Display mobile>
+      <Row content="center">
+        <section class="texts text">
+          <Texts />
+        </section>
+      </Row>
+    </Display>
 
     <Row content="spaced">
       <section class="modes text">
